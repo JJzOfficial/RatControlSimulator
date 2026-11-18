@@ -1,0 +1,579 @@
+{
+  "configVersion": "Demo_0.4",
+  "specVersion": "P0-spec-0.2",
+  "status": "authoring-spec-not-imported",
+  "units": {
+    "distance": "m",
+    "time": "effective-game-seconds",
+    "currency": "integer-yuan"
+  },
+  "project": {
+    "targetDirectory": "G:/MyGame/RatControlSimulator",
+    "unityVersion": "6000.3.28f1",
+    "renderPipeline": "HDRP",
+    "hdrpVersion": "17.3.0",
+    "inputSystemVersion": "1.20.1",
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "backgroundMusic": false,
+    "targetGPU": "GTX 1660 6GB",
+    "targetResolution": [
+      1920,
+      1080
+    ],
+    "targetFPS": 60,
+    "assetBudgetCNY": [
+      500,
+      1000
+    ]
+  },
+  "player": {
+    "baseSlots": 4,
+    "maximumPlannedSlots": 10,
+    "height": 1.75,
+    "crouchedHeight": 1.1,
+    "radius": 0.3,
+    "walkSpeed": 3,
+    "sprintSpeed": 5,
+    "crouchSpeed": 1.5,
+    "jumpHeight": 0.35,
+    "stepOffset": 0.2,
+    "slopeLimit": 45,
+    "gravity": -20,
+    "baseFOV": 75,
+    "fovRange": [
+      60,
+      100
+    ],
+    "health": 100,
+    "stamina": 100,
+    "sprintDrainPerSecond": 12.5,
+    "staminaRecoveryDelay": 1,
+    "staminaRecoveryPerSecond": 20,
+    "breathSeconds": 8,
+    "breathRecoveryDelay": 1.5,
+    "breathRecoveryPerSecond": 2,
+    "breathEmptyLockSeconds": 1,
+    "breathRequiresStationaryAim": true,
+    "crouchedAimSway": 0,
+    "visibleBody": "hands-and-forearms"
+  },
+  "interaction": {
+    "range": 2.5,
+    "assistRadius": 0.04,
+    "lostSightTolerance": 0.25,
+    "investigateSeconds": 2,
+    "repairSeconds": 3,
+    "cleanSeconds": 3,
+    "spraySeconds": 2,
+    "deploySeconds": 2,
+    "resetSeconds": 2,
+    "bagSeconds": 2,
+    "transferSeconds": 2.5,
+    "minimumDurationSeconds": 0.25,
+    "consumeOnSuccessfulCommitOnly": true
+  },
+  "sense": {
+    "radius": 10,
+    "markSeconds": 4,
+    "cooldownSeconds": 10,
+    "throughWalls": true,
+    "scanExistingOnly": true
+  },
+  "simulation": {
+    "tickSeconds": 0.05,
+    "perceptionHz": 10,
+    "maximumRepathHz": 2,
+    "unreachableRepathSeconds": 2,
+    "unreachableRecoverySeconds": 5,
+    "respawnOrdinaryTargets": false,
+    "sealingMode": "route-only"
+  },
+  "vehicle": {
+    "ordinaryLiveSlots": 4,
+    "largeLiveSlots": 1,
+    "corpseUsesLiveSlot": false,
+    "deploymentLimit": 2,
+    "deliverySeconds": 10
+  },
+  "profile": {
+    "startingCash": 300,
+    "level2RequiredTotalXP": 120,
+    "initialOwned": [
+      {
+        "itemId": "E01",
+        "count": 1
+      },
+      {
+        "itemId": "E03",
+        "count": 1
+      },
+      {
+        "itemId": "E04",
+        "count": 1
+      },
+      {
+        "itemId": "E05",
+        "count": 2
+      },
+      {
+        "itemId": "E14",
+        "count": 1
+      },
+      {
+        "itemId": "P01",
+        "count": 1
+      },
+      {
+        "itemId": "P02",
+        "count": 1
+      },
+      {
+        "itemId": "P07",
+        "count": 1
+      },
+      {
+        "itemId": "P09",
+        "count": 3
+      }
+    ],
+    "plannedSaveSlots": 3
+  },
+  "species": [
+    {
+      "id": "I01",
+      "nameKey": "species.I01",
+      "size": "Small",
+      "investigationMode": "CorpseSample",
+      "tradeable": false
+    },
+    {
+      "id": "I05",
+      "nameKey": "species.I05",
+      "size": "Small",
+      "investigationMode": "CorpseSample",
+      "tradeable": false
+    },
+    {
+      "id": "M01",
+      "nameKey": "species.M01",
+      "size": "Small",
+      "investigationMode": "Corpse",
+      "livePrice": 64,
+      "corpsePrice": 16,
+      "donationXP": 15,
+      "lengthIncludingTail": 0.22,
+      "runSpeed": 3.8,
+      "feedingApproachSpeed": 0.7,
+      "sightRange": 6,
+      "viewAngle": 120,
+      "movementHearingRange": 4,
+      "lightAlarmSeconds": 2,
+      "fleeSeconds": 4,
+      "hideSecondsRange": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "M02",
+      "nameKey": "species.M02",
+      "size": "Small",
+      "investigationMode": "Corpse",
+      "livePrice": 80,
+      "corpsePrice": 20,
+      "donationXP": 20,
+      "lengthIncludingTail": 0.4,
+      "runSpeed": 4.2,
+      "inheritsBehaviorProfile": "M01"
+    },
+    {
+      "id": "C01",
+      "nameKey": "species.C01",
+      "size": "Small",
+      "investigationMode": "LiveContained",
+      "livePrice": 1400,
+      "corpsePrice": 350,
+      "donationXP": 250,
+      "modelPlan": "project-authored-prototype",
+      "rollingIntoBallCountsAsCapture": false
+    }
+  ],
+  "coreItems": [
+    {
+      "id": "E01",
+      "kind": "Tool",
+      "slots": 1,
+      "permanent": true,
+      "internalCapacity": 5,
+      "defaultLoadedCharges": 0,
+      "ammoId": "P01"
+    },
+    {
+      "id": "E03",
+      "kind": "Tool",
+      "slots": 1,
+      "permanent": true
+    },
+    {
+      "id": "E04",
+      "kind": "Tool",
+      "slots": 1,
+      "permanent": true,
+      "materialId": "P02"
+    },
+    {
+      "id": "E05",
+      "kind": "Tool",
+      "slots": 1,
+      "permanent": true,
+      "price": 120,
+      "requiresReset": true,
+      "acceptedSize": "Small",
+      "stackAfterSkill": true
+    },
+    {
+      "id": "E06.Small",
+      "kind": "Container",
+      "slots": 1,
+      "permanent": true,
+      "price": 750,
+      "unlockLevel": 2,
+      "animalCapacity": 1,
+      "acceptedSize": "Small",
+      "emptyStackAfterSkill": true
+    },
+    {
+      "id": "E14",
+      "kind": "Tool",
+      "slots": 1,
+      "permanent": true,
+      "quickToggleRequiresInBackpack": true
+    },
+    {
+      "id": "P01",
+      "kind": "Consumable",
+      "slots": 1,
+      "charges": 5,
+      "price": 25,
+      "stackAfterSkill": true
+    },
+    {
+      "id": "P02",
+      "kind": "Consumable",
+      "slots": 1,
+      "charges": 5,
+      "price": 30,
+      "stackAfterSkill": true
+    },
+    {
+      "id": "P07",
+      "kind": "Consumable",
+      "slots": 1,
+      "charges": 5,
+      "price": 20,
+      "stackAfterSkill": true
+    },
+    {
+      "id": "P09",
+      "kind": "Consumable",
+      "slots": 1,
+      "charges": 1,
+      "price": 3,
+      "stackAfterSkill": true
+    }
+  ],
+  "testOnlyItems": [
+    {
+      "id": "E13",
+      "kind": "Tool",
+      "slots": 1,
+      "internalCapacity": 5,
+      "defaultLoadedCharges": 0,
+      "ammoId": "P05",
+      "aimProfile": "PrecisionBasic",
+      "largeAnimalCompatible": false
+    },
+    {
+      "id": "P05",
+      "kind": "Consumable",
+      "slots": 1,
+      "charges": 30,
+      "price": 20
+    }
+  ],
+  "contracts": [
+    {
+      "id": "Q01",
+      "mapId": "L01",
+      "typeTags": [
+        "SearchClear"
+      ],
+      "requiredWorkSites": [
+        "L01.W01",
+        "L01.W02",
+        "L01.W03"
+      ],
+      "requiredSpecies": "M01",
+      "requiredCount": 5,
+      "spawnPhase": "Night",
+      "spawnMode": "five-indoor-outdoor",
+      "timeLimitSeconds": null,
+      "requiredControlMethods": [
+        "Killed",
+        "StableLiveCapture",
+        "EmployerAccepted"
+      ],
+      "minimumFurnitureRemaining": 0.6,
+      "failImmediatelyBelowMinimum": true,
+      "allowNightWithUnfinishedWork": true,
+      "rewardCash": 150,
+      "rewardXP": 120,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loanSmallCageWhenMissing": true,
+      "abortKeepsLoadedAnimalCargo": true,
+      "minimumLoanChargesWhenInsufficient": {
+        "P01": 2,
+        "P02": 2
+      },
+      "additionalPreparationLoanCharges": {
+        "P02": 2
+      },
+      "challenges": [
+        {
+          "id": "Q01.S1",
+          "type": "AllSealsClosedAtNightStart",
+          "sites": [
+            "L01.F01",
+            "L01.F02"
+          ]
+        },
+        {
+          "id": "Q01.S2",
+          "type": "FurnitureRemainingAtDeparture",
+          "minimumRatio": 0.8
+        },
+        {
+          "id": "Q01.S3",
+          "type": "OrdinaryLiveAnimalInVehicleAtDeparture",
+          "minimumCount": 1
+        }
+      ]
+    }
+  ],
+  "workSites": [
+    {
+      "id": "L01.W01",
+      "speciesId": "I01",
+      "positionXZ": [
+        6,
+        2
+      ],
+      "stages": [
+        "Inspect",
+        "Spray",
+        "Clean"
+      ],
+      "consumableCosts": [
+        {
+          "itemId": "P01",
+          "charges": 1
+        }
+      ],
+      "sampleId": "L01.SAMPLE.I01"
+    },
+    {
+      "id": "L01.W02",
+      "speciesId": "I05",
+      "positionXZ": [
+        5,
+        14
+      ],
+      "stages": [
+        "Inspect",
+        "DrainAndClean",
+        "SprayResidual"
+      ],
+      "consumableCosts": [
+        {
+          "itemId": "P01",
+          "charges": 1
+        }
+      ],
+      "sampleId": "L01.SAMPLE.I05"
+    },
+    {
+      "id": "L01.W03",
+      "positionXZ": [
+        6,
+        8
+      ],
+      "stages": [
+        "RepairLeak"
+      ],
+      "consumableCosts": [
+        {
+          "itemId": "P02",
+          "charges": 2
+        }
+      ]
+    },
+    {
+      "id": "L01.F01",
+      "positionXZ": [
+        8,
+        1
+      ],
+      "stages": [
+        "Seal"
+      ],
+      "consumableCosts": [
+        {
+          "itemId": "P02",
+          "charges": 1
+        }
+      ],
+      "effect": "close-kitchen-navigation-edge"
+    },
+    {
+      "id": "L01.F02",
+      "positionXZ": [
+        -8,
+        2
+      ],
+      "stages": [
+        "Seal"
+      ],
+      "consumableCosts": [
+        {
+          "itemId": "P02",
+          "charges": 1
+        }
+      ],
+      "effect": "close-storage-navigation-edge"
+    }
+  ],
+  "protectedAssets": [
+    {
+      "id": "L01.A01",
+      "initialDurability": 100,
+      "weight": 1
+    },
+    {
+      "id": "L01.A02",
+      "initialDurability": 100,
+      "weight": 1
+    },
+    {
+      "id": "L01.A03",
+      "initialDurability": 100,
+      "weight": 1
+    },
+    {
+      "id": "L01.A04",
+      "initialDurability": 100,
+      "weight": 1
+    },
+    {
+      "id": "L01.A05",
+      "initialDurability": 100,
+      "weight": 1
+    }
+  ],
+  "furnitureDamage": {
+    "pointsPerCompletedBite": 10,
+    "biteSeconds": 3,
+    "minimumAttackInterval": 10,
+    "repairableInP0": false
+  },
+  "spawnAnchors": [
+    {
+      "id": "L01.R01",
+      "positionXZ": [
+        10,
+        0
+      ],
+      "fallbackPositionXZ": [
+        12,
+        1
+      ]
+    },
+    {
+      "id": "L01.R02",
+      "positionXZ": [
+        -10,
+        3
+      ],
+      "fallbackPositionXZ": [
+        -12,
+        4
+      ]
+    },
+    {
+      "id": "L01.R03",
+      "positionXZ": [
+        7,
+        14
+      ],
+      "fallbackPositionXZ": [
+        10,
+        15
+      ]
+    }
+  ],
+  "optionalEvents": [
+    {
+      "id": "L01.OPTIONAL.M02",
+      "speciesId": "M02",
+      "count": 1,
+      "enabledFromRunOrdinal": 2,
+      "phase": "Night",
+      "positionXZ": [
+        -9,
+        13
+      ],
+      "countsAsMainTarget": false
+    },
+    {
+      "id": "L01.RARE.C01",
+      "speciesId": "C01",
+      "count": 1,
+      "unlockAfterContractSuccess": "Q01",
+      "firstCaptureConsumesGuarantee": true,
+      "retryIfNotCaptured": true,
+      "rotationCooldownRuns": 3,
+      "positionXZ": [
+        -6,
+        15
+      ]
+    }
+  ],
+  "outcomePolicies": {
+    "systemFailure": {
+      "autoEndRun": true,
+      "keepAnimalCargo": false,
+      "keepPermanentEquipment": true,
+      "keepInvestigations": true,
+      "awardNewStars": false
+    },
+    "rescue": {
+      "keepAnimalCargo": false,
+      "keepPermanentEquipment": true,
+      "keepCompanions": true
+    },
+    "abortSearchOrNest": {
+      "keepLoadedAnimalCargo": true,
+      "awardContractReward": false
+    },
+    "abortUnfinishedProtectionOrTimed": {
+      "treatAsFailure": true,
+      "keepAnimalCargo": false
+    },
+    "companyRelease": "terminal-no-reward",
+    "fieldRelease": "same-entity-recaptureable-no-reward",
+    "loadingOlderSave": "rollback-entire-profile-and-run"
+  }
+}

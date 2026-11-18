@@ -1,0 +1,23 @@
+# Whitelist: ignore everything at the root, then re-include what belongs in the repo.
+/*
+!/.gitignore
+!/.gitattributes
+!/AGENTS.md
+!/《捕鼠模拟器》策划文档.md
+!/开发文档/
+!/图片和附件/
+!/RatControlSimulator/
+
+# Unity project: only source folders.
+/RatControlSimulator/*
+!/RatControlSimulator/Assets/
+!/RatControlSimulator/Packages/
+!/RatControlSimulator/ProjectSettings/
+
+# Safety net inside included folders.
+*.csproj
+*.sln
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

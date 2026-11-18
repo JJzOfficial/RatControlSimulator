@@ -1,0 +1,6674 @@
+{
+  "configVersion": "FullGame_Config_1.0",
+  "specVersion": "FullGame-spec-1.0",
+  "balanceVersion": "whitebox-1.0",
+  "status": "authoring-spec-not-imported-not-implemented",
+  "date": "2026-11-14",
+  "authority": "本轮用户要求及随机化答复优先；未确认数值均为可调整工程初值",
+  "baseline": {
+    "build": "G:/MyGame/Builds/RiverbendDemoV4",
+    "project": "G:/MyGame/RatControlSimulator",
+    "p0Status": "user-accepted-2026-11-14",
+    "unity": "6000.3.28f1",
+    "pipeline": "HDRP 17.3.0",
+    "input": "Input System 1.20.1",
+    "languages": [
+      "zh-Hans",
+      "en"
+    ],
+    "music": false
+  },
+  "counts": {
+    "taskMaps": 6,
+    "companyMaps": 1,
+    "contracts": 18,
+    "stars": 54,
+    "codexSpecies": 45,
+    "rareSpecies": 12,
+    "equipmentPlatforms": 18,
+    "equipmentDefinitions": 20,
+    "consumableDefinitions": 10,
+    "inventoryDefinitions": 29,
+    "builtInDefinitions": 1,
+    "companionTypes": 2,
+    "baseShopDefinitions": 32,
+    "skillNodes": 26
+  },
+  "player": {
+    "startingCash": 300,
+    "baseSlots": 4,
+    "maxSlots": 10,
+    "health": 100,
+    "stamina": 100,
+    "sprintDrainPerSecond": 12.5,
+    "staminaRegenDelay": 1,
+    "staminaRegenPerSecond": 20,
+    "breathSeconds": 8,
+    "breathRegenDelay": 1.5,
+    "breathRegenPerSecond": 2,
+    "breathEmptyLockSeconds": 1,
+    "walkSpeed": 3,
+    "sprintSpeed": 5,
+    "crouchSpeed": 1.5,
+    "crouchStepVolume": 0,
+    "crouchStepStimulus": 0,
+    "interactionRange": 2.5,
+    "qRadius": 10,
+    "qMarkSeconds": 4,
+    "qCooldownSeconds": 10
+  },
+  "interaction": {
+    "gestureThresholdSeconds": 0.35,
+    "gestureThresholdCountsTowardsDuration": false,
+    "minimumDurationSeconds": 0.25,
+    "clock": "effective-game-time",
+    "uiSource": "InteractionSession.normalizedProgress",
+    "completionSource": "InteractionSession.commitResult",
+    "durations": {
+      "Investigate": 2,
+      "Repair": 3,
+      "CleanSource": 3,
+      "CleanRemains": 1.2,
+      "Drain": 3,
+      "Deploy": 2,
+      "ResetTrap": 1.2,
+      "OpenCage": 1.2,
+      "BagCorpse": 2,
+      "Transfer": 2.5,
+      "CaptureNet": 2,
+      "ControlRod": 2,
+      "Identify": 1.5
+    }
+  },
+  "bait": {
+    "baseRadiusM": 9,
+    "pathDistanceMultiplier": 1.5,
+    "reconsiderSeconds": 1,
+    "safeNoticeWithinSeconds": 3,
+    "noticeNeedsVisualLOS": false,
+    "closedWallBlocksSmellRoute": true,
+    "inspectionSeconds": [
+      2,
+      6
+    ],
+    "revisitCooldownSeconds": [
+      5,
+      12
+    ],
+    "minimumAttractionScore": 0.65,
+    "scoreFormula": "0.45 + 0.25*hunger + 0.20*preference + 0.10*boldness - 0.50*alert01",
+    "approachThreshold": 0.55,
+    "switchHysteresis": 0.1,
+    "occupantCapacity": 1,
+    "automaticCaptureAtRadius": false
+  },
+  "deployment": {
+    "baseTotal": 8,
+    "rankTotals": [
+      12,
+      16
+    ],
+    "counts": [
+      "E05",
+      "E06.Small",
+      "E06.Medium",
+      "E06.Large",
+      "E09",
+      "E17"
+    ],
+    "occupiedCounts": true,
+    "ownershipLimit": null
+  },
+  "layout": {
+    "rerollOn": [
+      "NewProfileFirstDeparture",
+      "ConfirmNewContractDeparture"
+    ],
+    "keepOn": [
+      "LoadSave",
+      "RestartApplication",
+      "BeginNight",
+      "ReturnFromPause"
+    ],
+    "minimumCandidatesPerRequiredPoint": 4,
+    "preferDifferentSignature": true,
+    "validationAttempts": 32,
+    "saveConcreteAnchorsAndPoses": true,
+    "seedHash": "stable-versioned-hash-not-string.GetHashCode"
+  },
+  "vehicle": {
+    "ordinaryLiveSlots": 4,
+    "largeLiveSlots": 1,
+    "ordinaryUpgrades": [
+      6,
+      8,
+      12
+    ],
+    "largeUpgrades": [
+      2,
+      3
+    ],
+    "companyDeliverySeconds": 0,
+    "fieldDeliverySeconds": 10,
+    "pendingOrderLimit": 1,
+    "safeZoneRadiusM": 4
+  },
+  "species": [
+    {
+      "id": "I01",
+      "zh": "美洲大蠊",
+      "en": "American cockroach",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02",
+        "L04"
+      ],
+      "obtainContract": "Q01",
+      "shape": "扁椭圆体、长触角、外露翅",
+      "problem": "潮湿垃圾缝；灭杀后清洁",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.04,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I01",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q01",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I02",
+      "zh": "德国小蠊",
+      "en": "German cockroach",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02"
+      ],
+      "obtainContract": "Q02",
+      "shape": "更小体型、背板两道线",
+      "problem": "厨柜电器后；两个小源区",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.018,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I02",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q02",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I03",
+      "zh": "家蝇",
+      "en": "House fly",
+      "size": "Insect",
+      "family": "InsectFly",
+      "maps": [
+        "L01",
+        "L03",
+        "L04"
+      ],
+      "obtainContract": "Q07",
+      "shape": "短口器、圆躯、双翅",
+      "problem": "粪污垃圾与腐坏饲料",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.008,
+      "walkSpeed": 0.4,
+      "fleeSpeed": 1.2,
+      "visionM": 2,
+      "visionFovDeg": 160,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "FlightVolume",
+      "captureMethods": [],
+      "captureRestriction": "电拍/喷洒与源头分开",
+      "prefabKey": "GB_I03",
+      "animationProfile": "InsectFly",
+      "noiseProfile": "InsectFly",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q07",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I04",
+      "zh": "厩螫蝇",
+      "en": "Stable fly",
+      "size": "Insect",
+      "family": "InsectFly",
+      "maps": [
+        "L04"
+      ],
+      "obtainContract": "Q10",
+      "shape": "向前口器、窄腹分节",
+      "problem": "湿垫料；家猪跺脚预警",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.008,
+      "walkSpeed": 0.4,
+      "fleeSpeed": 1.2,
+      "visionM": 2,
+      "visionFovDeg": 160,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "FlightVolume",
+      "captureMethods": [],
+      "captureRestriction": "电拍/喷洒与源头分开",
+      "prefabKey": "GB_I04",
+      "animationProfile": "InsectFly",
+      "noiseProfile": "InsectFly",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q10",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I05",
+      "zh": "库蚊代表",
+      "en": "Culex mosquito",
+      "size": "Insect",
+      "family": "InsectFly",
+      "maps": [
+        "L01",
+        "L03",
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q01",
+      "shape": "细腹长腿长口器",
+      "problem": "积水飞行；排水与修漏独立",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.006,
+      "walkSpeed": 0.4,
+      "fleeSpeed": 1.2,
+      "visionM": 2,
+      "visionFovDeg": 160,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "FlightVolume",
+      "captureMethods": [],
+      "captureRestriction": "电拍/喷洒与源头分开",
+      "prefabKey": "GB_I05",
+      "animationProfile": "InsectFly",
+      "noiseProfile": "InsectFly",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q01",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I06",
+      "zh": "阿根廷蚁",
+      "en": "Argentine ant",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02",
+        "L05"
+      ],
+      "obtainContract": "Q03",
+      "shape": "细腰节、成列虫路",
+      "problem": "沿虫路调查源口后处理封缝",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.004,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I06",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q03",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I07",
+      "zh": "幕衣蛾",
+      "en": "Webbing clothes moth",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02"
+      ],
+      "obtainContract": "Q04",
+      "shape": "窄翅成虫、幼虫套与织物孔",
+      "problem": "织物隔离清洁；不只追成虫",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.009,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I07",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q04",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I08",
+      "zh": "西部地下白蚁",
+      "en": "Western subterranean termite",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02",
+        "L03"
+      ],
+      "obtainContract": "Q04",
+      "shape": "无明显细腰、泥道与木件",
+      "problem": "受害构件处理并修复入口",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.006,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I08",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q04",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I09",
+      "zh": "普通蠹鱼",
+      "en": "Silverfish",
+      "size": "Insect",
+      "family": "InsectCrawl",
+      "maps": [
+        "L01",
+        "L02"
+      ],
+      "obtainContract": "Q05",
+      "shape": "扁梭体与三尾丝",
+      "problem": "潮纸角；先修漏再清纸料",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.015,
+      "walkSpeed": 0.05,
+      "fleeSpeed": 0.2,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "不捕活体，仅代表标本",
+      "prefabKey": "GB_I09",
+      "animationProfile": "InsectCrawl",
+      "noiseProfile": "InsectCrawl",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q05",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I10",
+      "zh": "西部黄胡蜂",
+      "en": "Western yellowjacket",
+      "size": "Insect",
+      "family": "InsectNest",
+      "maps": [
+        "L03",
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q07",
+      "shape": "细腰腹节与警示环纹",
+      "problem": "确认巢点；受扰局部防御",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.014,
+      "walkSpeed": 0.5,
+      "fleeSpeed": 1.5,
+      "visionM": 3,
+      "visionFovDeg": 180,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "NestVolume",
+      "captureMethods": [],
+      "captureRestriction": "巢受扰后局部防御，不追全图",
+      "prefabKey": "GB_I10",
+      "animationProfile": "InsectNest",
+      "noiseProfile": "InsectNest",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q07",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I11",
+      "zh": "谷象",
+      "en": "Granary weevil",
+      "size": "Insect",
+      "family": "CropInsect",
+      "maps": [
+        "L02"
+      ],
+      "obtainContract": "Q04",
+      "shape": "前伸象鼻、粮粒蛀孔",
+      "problem": "搬运隔离粮批；禁止喷健康粮",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.004,
+      "walkSpeed": 0.1,
+      "fleeSpeed": 0.4,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "受害批次或树段处理",
+      "prefabKey": "GB_I11",
+      "animationProfile": "CropInsect",
+      "noiseProfile": "CropInsect",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q04",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I12",
+      "zh": "光肩星天牛",
+      "en": "Asian longhorned beetle",
+      "size": "Insect",
+      "family": "CropInsect",
+      "maps": [
+        "L05"
+      ],
+      "obtainContract": "Q13",
+      "shape": "超长分节触角、圆孔木屑",
+      "problem": "标受害树段、隔离修整",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.03,
+      "walkSpeed": 0.1,
+      "fleeSpeed": 0.4,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "受害批次或树段处理",
+      "prefabKey": "GB_I12",
+      "animationProfile": "CropInsect",
+      "noiseProfile": "CropInsect",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q13",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I13",
+      "zh": "短角蝗代表",
+      "en": "Melanoplus grasshopper",
+      "size": "Insect",
+      "family": "CropInsect",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q16",
+      "shape": "粗后腿、跳跃折线",
+      "problem": "田边啃叶小源；可选点处理",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.035,
+      "walkSpeed": 0.1,
+      "fleeSpeed": 0.4,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "受害批次或树段处理",
+      "prefabKey": "GB_I13",
+      "animationProfile": "CropInsect",
+      "noiseProfile": "CropInsect",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q16",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "I14",
+      "zh": "茶翅蝽",
+      "en": "Brown marmorated stink bug",
+      "size": "Insect",
+      "family": "CropInsect",
+      "maps": [
+        "L05"
+      ],
+      "obtainContract": "Q13",
+      "shape": "盾形体、触角浅环",
+      "problem": "果面受损与枝叶下源点",
+      "investigation": "CorpseSample",
+      "livePrice": 0,
+      "corpsePrice": 0,
+      "donationXP": 0,
+      "lengthM": 0.016,
+      "walkSpeed": 0.1,
+      "fleeSpeed": 0.4,
+      "visionM": 1,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SourceSurface",
+      "captureMethods": [],
+      "captureRestriction": "受害批次或树段处理",
+      "prefabKey": "GB_I14",
+      "animationProfile": "CropInsect",
+      "noiseProfile": "CropInsect",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q13",
+      "initialAlert": 0,
+      "foodPreference": 0,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M01",
+      "zh": "小家鼠",
+      "en": "House mouse",
+      "size": "Small",
+      "family": "GroundRodent",
+      "maps": [
+        "L01",
+        "L02",
+        "L03",
+        "L04"
+      ],
+      "obtainContract": "Q01",
+      "shape": "小躯、大耳、细长尾",
+      "problem": "墙脚短窜；污染与啃咬",
+      "investigation": "Corpse",
+      "livePrice": 64,
+      "corpsePrice": 16,
+      "donationXP": 15,
+      "lengthM": 0.22,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2,
+      "visionM": 6,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "GroundGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "E05/E06.Small/E08；M01–M04另可E09",
+      "prefabKey": "GB_M01",
+      "animationProfile": "GroundRodent",
+      "noiseProfile": "GroundRodent",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q01",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M02",
+      "zh": "褐家鼠",
+      "en": "Brown rat",
+      "size": "Small",
+      "family": "GroundRodent",
+      "maps": [
+        "L01",
+        "L02",
+        "L03",
+        "L04"
+      ],
+      "obtainContract": "Q04",
+      "shape": "粗躯、钝吻、尾较短",
+      "problem": "地面洞道；独立或成对露头",
+      "investigation": "Corpse",
+      "livePrice": 80,
+      "corpsePrice": 20,
+      "donationXP": 20,
+      "lengthM": 0.4,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2,
+      "visionM": 6,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "GroundGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "E05/E06.Small/E08；M01–M04另可E09",
+      "prefabKey": "GB_M02",
+      "animationProfile": "GroundRodent",
+      "noiseProfile": "GroundRodent",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q04",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M03",
+      "zh": "黑家鼠",
+      "en": "Roof rat",
+      "size": "Small",
+      "family": "HighRodent",
+      "maps": [
+        "L02",
+        "L05"
+      ],
+      "obtainContract": "Q05",
+      "shape": "瘦身、尖吻、长尾",
+      "problem": "屋梁/低枝与地面转接",
+      "investigation": "Corpse",
+      "livePrice": 72,
+      "corpsePrice": 18,
+      "donationXP": 18,
+      "lengthM": 0.38,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2.3,
+      "visionM": 7,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "HighGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "地面笼兼容；必须有下行接手点",
+      "prefabKey": "GB_M03",
+      "animationProfile": "HighRodent",
+      "noiseProfile": "HighRodent",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q05",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M04",
+      "zh": "加州田鼠",
+      "en": "California vole",
+      "size": "Small",
+      "family": "GroundRodent",
+      "maps": [
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q14",
+      "shape": "圆钝体、短尾、小耳",
+      "problem": "草下跑道；啃树皮根茎",
+      "investigation": "Corpse",
+      "livePrice": 56,
+      "corpsePrice": 14,
+      "donationXP": 12,
+      "lengthM": 0.16,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2,
+      "visionM": 6,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "GroundGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "E05/E06.Small/E08；M01–M04另可E09",
+      "prefabKey": "GB_M04",
+      "animationProfile": "GroundRodent",
+      "noiseProfile": "GroundRodent",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q14",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M05",
+      "zh": "博塔囊地鼠",
+      "en": "Botta pocket gopher",
+      "size": "Small",
+      "family": "Burrow",
+      "maps": [
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q14",
+      "shape": "粗前爪、颊囊、短尾",
+      "problem": "新土堆；固定洞系切出口",
+      "investigation": "Corpse",
+      "livePrice": 76,
+      "corpsePrice": 19,
+      "donationXP": 20,
+      "lengthM": 0.25,
+      "walkSpeed": 0.6,
+      "fleeSpeed": 1.8,
+      "visionM": 5,
+      "visionFovDeg": 100,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "BurrowGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "洞系出口有地表捕获位",
+      "prefabKey": "GB_M05",
+      "animationProfile": "Burrow",
+      "noiseProfile": "Burrow",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q14",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M06",
+      "zh": "沙漠棉尾兔",
+      "en": "Desert cottontail",
+      "size": "Medium",
+      "family": "OpenRunner",
+      "maps": [
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q15",
+      "shape": "白棉尾、较短耳、蹲姿",
+      "problem": "灌丛边取食与抬头窗口",
+      "investigation": "Corpse",
+      "livePrice": 180,
+      "corpsePrice": 45,
+      "donationXP": 45,
+      "lengthM": 0.48,
+      "walkSpeed": 1,
+      "fleeSpeed": 4,
+      "visionM": 12,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "中型E06.Medium；C07仅E06.Large",
+      "prefabKey": "GB_M06",
+      "animationProfile": "OpenRunner",
+      "noiseProfile": "OpenRunner",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q15",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M07",
+      "zh": "穴兔",
+      "en": "European rabbit",
+      "size": "Medium",
+      "family": "Burrow",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q16",
+      "shape": "紧凑身、短后肢、洞群",
+      "problem": "绕洞口回巢；地表可处理",
+      "investigation": "Corpse",
+      "livePrice": 200,
+      "corpsePrice": 50,
+      "donationXP": 50,
+      "lengthM": 0.5,
+      "walkSpeed": 0.6,
+      "fleeSpeed": 1.8,
+      "visionM": 5,
+      "visionFovDeg": 100,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "BurrowGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "洞系出口有地表捕获位",
+      "prefabKey": "GB_M07",
+      "animationProfile": "Burrow",
+      "noiseProfile": "Burrow",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q16",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M08",
+      "zh": "黑尾长耳兔",
+      "en": "Black-tailed jackrabbit",
+      "size": "Medium",
+      "family": "OpenRunner",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q17",
+      "shape": "长耳黑尾、长后肢",
+      "problem": "开阔长逃；短停抬头",
+      "investigation": "Corpse",
+      "livePrice": 240,
+      "corpsePrice": 60,
+      "donationXP": 60,
+      "lengthM": 0.65,
+      "walkSpeed": 1,
+      "fleeSpeed": 4,
+      "visionM": 12,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "中型E06.Medium；C07仅E06.Large",
+      "prefabKey": "GB_M08",
+      "animationProfile": "OpenRunner",
+      "noiseProfile": "OpenRunner",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q17",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M09",
+      "zh": "黄鼬",
+      "en": "Siberian weasel",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L03"
+      ],
+      "obtainContract": "Q08",
+      "shape": "细长身、短腿、长尾",
+      "problem": "破网入鸡舍、偷蛋撤回",
+      "investigation": "Corpse",
+      "livePrice": 220,
+      "corpsePrice": 55,
+      "donationXP": 55,
+      "lengthM": 0.5,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_M09",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q08",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M10",
+      "zh": "美洲水貂",
+      "en": "American mink",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L03"
+      ],
+      "obtainContract": "Q07",
+      "shape": "细长暗色体、水边节点",
+      "problem": "沟渠入口绕入；不需水下玩法",
+      "investigation": "Corpse",
+      "livePrice": 260,
+      "corpsePrice": 65,
+      "donationXP": 65,
+      "lengthM": 0.6,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_M10",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q07",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M11",
+      "zh": "浣熊",
+      "en": "Raccoon",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L04"
+      ],
+      "obtainContract": "Q11",
+      "shape": "眼罩几何、环尾、灵活前爪",
+      "problem": "翻垃圾饲料；低位攀爬",
+      "investigation": "Corpse",
+      "livePrice": 280,
+      "corpsePrice": 70,
+      "donationXP": 70,
+      "lengthM": 0.8,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_M11",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q11",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M12",
+      "zh": "北美负鼠",
+      "en": "Virginia opossum",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L04"
+      ],
+      "obtainContract": "Q12",
+      "shape": "尖白脸、裸尾",
+      "problem": "棚底低速；假死不算控制",
+      "investigation": "Corpse",
+      "livePrice": 180,
+      "corpsePrice": 45,
+      "donationXP": 45,
+      "lengthM": 0.8,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_M12",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q12",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M13",
+      "zh": "条纹臭鼬",
+      "en": "Striped skunk",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L04"
+      ],
+      "obtainContract": "Q12",
+      "shape": "蓬尾、两道背纹",
+      "problem": "抬尾预警；近距干扰后退",
+      "investigation": "Corpse",
+      "livePrice": 240,
+      "corpsePrice": 60,
+      "donationXP": 60,
+      "lengthM": 0.7,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_M13",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q12",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M14",
+      "zh": "赤狐",
+      "en": "Red fox",
+      "size": "Medium",
+      "family": "Canid",
+      "maps": [
+        "L03",
+        "L05",
+        "L06"
+      ],
+      "obtainContract": "Q16",
+      "shape": "尖耳尖吻、蓬尾细腿",
+      "problem": "林缘绕行偷取或田间巡游",
+      "investigation": "Corpse",
+      "livePrice": 320,
+      "corpsePrice": 80,
+      "donationXP": 80,
+      "lengthM": 1.1,
+      "walkSpeed": 1.2,
+      "fleeSpeed": 4.5,
+      "visionM": 14,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "中型/大型笼按体型；稀有仅活体图鉴",
+      "prefabKey": "GB_M14",
+      "animationProfile": "Canid",
+      "noiseProfile": "Canid",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q16",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M15",
+      "zh": "郊狼",
+      "en": "Coyote",
+      "size": "Large",
+      "family": "Canid",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q18",
+      "shape": "窄胸尖吻、大直耳、尾低",
+      "problem": "田边试探绕行；不默认攻击",
+      "investigation": "Corpse",
+      "livePrice": 600,
+      "corpsePrice": 150,
+      "donationXP": 110,
+      "lengthM": 1.3,
+      "walkSpeed": 1.2,
+      "fleeSpeed": 4.5,
+      "visionM": 14,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Large"
+      ],
+      "captureRestriction": "中型/大型笼按体型；稀有仅活体图鉴",
+      "prefabKey": "GB_M15",
+      "animationProfile": "Canid",
+      "noiseProfile": "Canid",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q18",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "M16",
+      "zh": "野猪",
+      "en": "Wild boar",
+      "size": "Large",
+      "family": "Heavy",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q17",
+      "shape": "高肩粗颈、长吻獠牙",
+      "problem": "翻土；预告冲撞与恢复",
+      "investigation": "Corpse",
+      "livePrice": 800,
+      "corpsePrice": 200,
+      "donationXP": 140,
+      "lengthM": 1.6,
+      "walkSpeed": 1.2,
+      "fleeSpeed": 5,
+      "visionM": 12,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "LargeSurface",
+      "captureMethods": [
+        "E06.Large"
+      ],
+      "captureRestriction": "E06.Large；Q17主目标必须击杀",
+      "prefabKey": "GB_M16",
+      "animationProfile": "Heavy",
+      "noiseProfile": "Heavy",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q17",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": true
+    },
+    {
+      "id": "M17",
+      "zh": "灰狼",
+      "en": "Gray wolf",
+      "size": "Large",
+      "family": "Canid",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q18",
+      "shape": "大胸宽头、长腿、厚尾",
+      "problem": "指定合同短距追击",
+      "investigation": "Corpse",
+      "livePrice": 900,
+      "corpsePrice": 225,
+      "donationXP": 150,
+      "lengthM": 1.6,
+      "walkSpeed": 1.2,
+      "fleeSpeed": 4.5,
+      "visionM": 14,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Large"
+      ],
+      "captureRestriction": "中型/大型笼按体型；稀有仅活体图鉴",
+      "prefabKey": "GB_M17",
+      "animationProfile": "Canid",
+      "noiseProfile": "Canid",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q18",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": true
+    },
+    {
+      "id": "S01",
+      "zh": "玉米锦蛇",
+      "en": "Corn snake",
+      "size": "Small",
+      "family": "Snake",
+      "maps": [
+        "L02",
+        "L03"
+      ],
+      "obtainContract": "Q06",
+      "shape": "细蛇身、窄头、鞍状色块",
+      "problem": "非目标来客；用封闭内胆活捕",
+      "investigation": "LiveContained",
+      "livePrice": 160,
+      "corpsePrice": 40,
+      "donationXP": 40,
+      "lengthM": 1.1,
+      "walkSpeed": 0.35,
+      "fleeSpeed": 0.8,
+      "visionM": 3,
+      "visionFovDeg": 100,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SnakeGround",
+      "captureMethods": [
+        "E07+E06.Small.SnakeLiner",
+        "E06.Small.SnakeLiner"
+      ],
+      "captureRestriction": "E07+E06.Small封闭内胆",
+      "prefabKey": "GB_S01",
+      "animationProfile": "Snake",
+      "noiseProfile": "Snake",
+      "health": 100,
+      "targetRole": "NonTargetDefault",
+      "firstTeaching": "Q06",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "S02",
+      "zh": "西部菱背响尾蛇",
+      "en": "Western diamondback rattlesnake",
+      "size": "Small",
+      "family": "Snake",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q17",
+      "shape": "宽头、菱纹、尾端响器",
+      "problem": "尾响预警；短距攻击",
+      "investigation": "Corpse",
+      "livePrice": 200,
+      "corpsePrice": 50,
+      "donationXP": 50,
+      "lengthM": 1.2,
+      "walkSpeed": 0.35,
+      "fleeSpeed": 0.8,
+      "visionM": 3,
+      "visionFovDeg": 100,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "SnakeGround",
+      "captureMethods": [
+        "E07+E06.Small.SnakeLiner",
+        "E06.Small.SnakeLiner"
+      ],
+      "captureRestriction": "E07+E06.Small封闭内胆",
+      "prefabKey": "GB_S02",
+      "animationProfile": "Snake",
+      "noiseProfile": "Snake",
+      "health": 100,
+      "targetRole": "ContractDefined",
+      "firstTeaching": "Q17",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": true
+    },
+    {
+      "id": "C01",
+      "zh": "欧洲刺猬",
+      "en": "European hedgehog",
+      "size": "Small",
+      "family": "Curl",
+      "maps": [
+        "L01",
+        "L04"
+      ],
+      "obtainContract": "Q01",
+      "shape": "刺背、尖吻、小耳、缩球体",
+      "problem": "室外低灌丛；缩球非捕获",
+      "investigation": "LiveContained",
+      "livePrice": 1400,
+      "corpsePrice": 350,
+      "donationXP": 250,
+      "lengthM": 0.26,
+      "walkSpeed": 0.45,
+      "fleeSpeed": 1,
+      "visionM": 4,
+      "visionFovDeg": 100,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "OutdoorGround",
+      "captureMethods": [
+        "E06.Small",
+        "E08.SlowWindow"
+      ],
+      "captureRestriction": "缩球不计控制；匹配笼或数据允许的网",
+      "prefabKey": "GB_C01",
+      "animationProfile": "Curl",
+      "noiseProfile": "Curl",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q01",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C02",
+      "zh": "马来穿山甲",
+      "en": "Sunda pangolin",
+      "size": "Medium",
+      "family": "Curl",
+      "maps": [
+        "L03",
+        "L05"
+      ],
+      "obtainContract": "Q08",
+      "shape": "鳞片分节、长尾、缩球体",
+      "problem": "蚁路线索、爪痕；缓慢退避",
+      "investigation": "LiveContained",
+      "livePrice": 3200,
+      "corpsePrice": 800,
+      "donationXP": 500,
+      "lengthM": 0.9,
+      "walkSpeed": 0.45,
+      "fleeSpeed": 1,
+      "visionM": 4,
+      "visionFovDeg": 100,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "OutdoorGround",
+      "captureMethods": [
+        "E06.Medium",
+        "E08.SlowWindow"
+      ],
+      "captureRestriction": "缩球不计控制；匹配笼或数据允许的网",
+      "prefabKey": "GB_C02",
+      "animationProfile": "Curl",
+      "noiseProfile": "Curl",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q08",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C03",
+      "zh": "豹猫",
+      "en": "Leopard cat",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L03"
+      ],
+      "obtainContract": "Q09",
+      "shape": "独立猫科比例、斑点与长尾",
+      "problem": "夜间狭道与监测线索",
+      "investigation": "LiveContained",
+      "livePrice": 3600,
+      "corpsePrice": 900,
+      "donationXP": 550,
+      "lengthM": 0.8,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_C03",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q09",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C04",
+      "zh": "欧亚红松鼠",
+      "en": "Eurasian red squirrel",
+      "size": "Small",
+      "family": "HighRodent",
+      "maps": [
+        "L05"
+      ],
+      "obtainContract": "Q13",
+      "shape": "大蓬尾、耳毛、后腿",
+      "problem": "低枝往返；地面可达小笼",
+      "investigation": "LiveContained",
+      "livePrice": 1600,
+      "corpsePrice": 400,
+      "donationXP": 280,
+      "lengthM": 0.4,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2.3,
+      "visionM": 7,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "HighGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "地面笼兼容；必须有下行接手点",
+      "prefabKey": "GB_C04",
+      "animationProfile": "HighRodent",
+      "noiseProfile": "HighRodent",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q13",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C05",
+      "zh": "欧洲鼹鼠",
+      "en": "European mole",
+      "size": "Small",
+      "family": "Burrow",
+      "maps": [
+        "L02",
+        "L05"
+      ],
+      "obtainContract": "Q14",
+      "shape": "铲形前肢、小眼、短尾",
+      "problem": "独立土丘与囊地鼠区别",
+      "investigation": "LiveContained",
+      "livePrice": 1500,
+      "corpsePrice": 375,
+      "donationXP": 260,
+      "lengthM": 0.16,
+      "walkSpeed": 0.6,
+      "fleeSpeed": 1.8,
+      "visionM": 5,
+      "visionFovDeg": 100,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "BurrowGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "洞系出口有地表捕获位",
+      "prefabKey": "GB_C05",
+      "animationProfile": "Burrow",
+      "noiseProfile": "Burrow",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q14",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C06",
+      "zh": "欧亚獾",
+      "en": "European badger",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q16",
+      "shape": "低宽身、头部条纹、粗爪",
+      "problem": "田边洞口；警戒退巢",
+      "investigation": "LiveContained",
+      "livePrice": 3000,
+      "corpsePrice": 750,
+      "donationXP": 450,
+      "lengthM": 0.9,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_C06",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q16",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C07",
+      "zh": "欧洲狍",
+      "en": "Roe deer",
+      "size": "Large",
+      "family": "OpenRunner",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q18",
+      "shape": "细长腿、短尾、独立鹿头",
+      "problem": "孤立树丛观察窗；大笼活捕",
+      "investigation": "LiveContained",
+      "livePrice": 6500,
+      "corpsePrice": 1625,
+      "donationXP": 850,
+      "lengthM": 1.3,
+      "walkSpeed": 1,
+      "fleeSpeed": 4,
+      "visionM": 12,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Large"
+      ],
+      "captureRestriction": "中型E06.Medium；C07仅E06.Large",
+      "prefabKey": "GB_C07",
+      "animationProfile": "OpenRunner",
+      "noiseProfile": "OpenRunner",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q18",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C08",
+      "zh": "黑线姬鼠",
+      "en": "Striped field mouse",
+      "size": "Small",
+      "family": "GroundRodent",
+      "maps": [
+        "L01",
+        "L05"
+      ],
+      "obtainContract": "Q02",
+      "shape": "尖吻长尾、背部黑纵线",
+      "problem": "垄沟短跳；不混普通计数",
+      "investigation": "LiveContained",
+      "livePrice": 1200,
+      "corpsePrice": 300,
+      "donationXP": 220,
+      "lengthM": 0.2,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2,
+      "visionM": 6,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "GroundGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "E05/E06.Small/E08；M01–M04另可E09",
+      "prefabKey": "GB_C08",
+      "animationProfile": "GroundRodent",
+      "noiseProfile": "GroundRodent",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q02",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C09",
+      "zh": "榛睡鼠",
+      "en": "Hazel dormouse",
+      "size": "Small",
+      "family": "HighRodent",
+      "maps": [
+        "L05"
+      ],
+      "obtainContract": "Q13",
+      "shape": "圆头大眼、蓬尾、矮枝姿态",
+      "problem": "果壳、低枝通地面",
+      "investigation": "LiveContained",
+      "livePrice": 1800,
+      "corpsePrice": 450,
+      "donationXP": 320,
+      "lengthM": 0.15,
+      "walkSpeed": 0.7,
+      "fleeSpeed": 2.3,
+      "visionM": 7,
+      "visionFovDeg": 120,
+      "hearingM": 4,
+      "lightThresholdSeconds": 2,
+      "navigation": "HighGraph",
+      "captureMethods": [
+        "E06.Small",
+        "E08"
+      ],
+      "captureRestriction": "地面笼兼容；必须有下行接手点",
+      "prefabKey": "GB_C09",
+      "animationProfile": "HighRodent",
+      "noiseProfile": "HighRodent",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q13",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C10",
+      "zh": "松貂",
+      "en": "Pine marten",
+      "size": "Medium",
+      "family": "SneakThief",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q16",
+      "shape": "蓬尾、浅色喉斑、长身",
+      "problem": "低位树洞到中笼路线",
+      "investigation": "LiveContained",
+      "livePrice": 3400,
+      "corpsePrice": 850,
+      "donationXP": 520,
+      "lengthM": 0.85,
+      "walkSpeed": 0.9,
+      "fleeSpeed": 3,
+      "visionM": 9,
+      "visionFovDeg": 120,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceAndLink",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "E06.Medium；蛇/大体型另配",
+      "prefabKey": "GB_C10",
+      "animationProfile": "SneakThief",
+      "noiseProfile": "SneakThief",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q16",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C11",
+      "zh": "雪兔",
+      "en": "Mountain hare",
+      "size": "Medium",
+      "family": "OpenRunner",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q17",
+      "shape": "粗短耳、宽后足、独立兔形",
+      "problem": "季节轮廓；不另做雪地图",
+      "investigation": "LiveContained",
+      "livePrice": 2600,
+      "corpsePrice": 650,
+      "donationXP": 400,
+      "lengthM": 0.6,
+      "walkSpeed": 1,
+      "fleeSpeed": 4,
+      "visionM": 12,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "中型E06.Medium；C07仅E06.Large",
+      "prefabKey": "GB_C11",
+      "animationProfile": "OpenRunner",
+      "noiseProfile": "OpenRunner",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q17",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    },
+    {
+      "id": "C12",
+      "zh": "耳廓狐",
+      "en": "Fennec fox",
+      "size": "Medium",
+      "family": "Canid",
+      "maps": [
+        "L06"
+      ],
+      "obtainContract": "Q18",
+      "shape": "极大耳、小身、蓬尾",
+      "problem": "干燥砾地；低惊扰中笼",
+      "investigation": "LiveContained",
+      "livePrice": 3800,
+      "corpsePrice": 950,
+      "donationXP": 580,
+      "lengthM": 0.65,
+      "walkSpeed": 1.2,
+      "fleeSpeed": 4.5,
+      "visionM": 14,
+      "visionFovDeg": 140,
+      "hearingM": 10,
+      "lightThresholdSeconds": 2,
+      "navigation": "SurfaceGraph",
+      "captureMethods": [
+        "E06.Medium"
+      ],
+      "captureRestriction": "中型/大型笼按体型；稀有仅活体图鉴",
+      "prefabKey": "GB_C12",
+      "animationProfile": "Canid",
+      "noiseProfile": "Canid",
+      "health": 100,
+      "targetRole": "Rare",
+      "firstTeaching": "Q18",
+      "initialAlert": 0,
+      "foodPreference": 0.8,
+      "recoverySeconds": [
+        3,
+        6
+      ],
+      "attackPlayer": false
+    }
+  ],
+  "items": [
+    {
+      "id": "E01",
+      "zh": "定向喷洒器",
+      "en": "Directional sprayer",
+      "platformId": "E01",
+      "kind": "Equipment",
+      "unlockLevel": 1,
+      "price": 0,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "20秒满量；连续消耗P01",
+      "modelRequirement": "定向喷出、空量、补充",
+      "prefabKey": "GB_E01",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E02",
+      "zh": "电蚊拍",
+      "en": "Electric swatter",
+      "platformId": "E02",
+      "kind": "Equipment",
+      "unlockLevel": 2,
+      "price": 550,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "近距0.8m扫击；能量100，每挥10；回车2秒充能",
+      "modelRequirement": "拍面、挥动与电弧；空能提示",
+      "prefabKey": "GB_E02",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E03",
+      "zh": "清理工具组",
+      "en": "Cleaning kit",
+      "platformId": "E03",
+      "kind": "Equipment",
+      "unlockLevel": 1,
+      "price": 200,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "成功一次-10%；范围清尸2m；P10补充",
+      "modelRequirement": "扫具与袋；脏净两态",
+      "prefabKey": "GB_E03",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E04",
+      "zh": "修缮工具包",
+      "en": "Repair kit",
+      "platformId": "E04",
+      "kind": "Equipment",
+      "unlockLevel": 1,
+      "price": 200,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "成功一次-10%；P02补充；封堵改变路线",
+      "modelRequirement": "工具箱、板片/网片切换",
+      "prefabKey": "GB_E04",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E05",
+      "zh": "机械捕鼠夹",
+      "en": "Snap trap",
+      "platformId": "E05",
+      "kind": "Equipment",
+      "unlockLevel": 1,
+      "price": 120,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "M01–M04；一次触发留尸；人工复位",
+      "modelRequirement": "底座/夹弓/压板；开闭两态",
+      "prefabKey": "GB_E05",
+      "permanent": true,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E06.Small",
+      "zh": "小型活捕笼",
+      "en": "Small live cage",
+      "platformId": "E06",
+      "kind": "Equipment",
+      "unlockLevel": 2,
+      "price": 750,
+      "emptySlots": 1,
+      "occupiedSlots": 1,
+      "maxUsesPerPackage": 0,
+      "rule": "一只小型；蛇内胆为同件配置",
+      "modelRequirement": "折叠、笼门、内部占用体",
+      "prefabKey": "GB_E06_Small",
+      "permanent": true,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E06.Medium",
+      "zh": "中型活捕笼",
+      "en": "Medium live cage",
+      "platformId": "E06",
+      "kind": "Equipment",
+      "unlockLevel": 6,
+      "price": 1800,
+      "emptySlots": 2,
+      "occupiedSlots": 2,
+      "maxUsesPerPackage": 0,
+      "rule": "一只中型；空/满均2格",
+      "modelRequirement": "较长笼体、门与把手",
+      "prefabKey": "GB_E06_Medium",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E06.Large",
+      "zh": "大型活捕笼",
+      "en": "Large live cage",
+      "platformId": "E06",
+      "kind": "Equipment",
+      "unlockLevel": 16,
+      "price": 5500,
+      "emptySlots": 2,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "收纳2格；展开固定；满笼双手搬运",
+      "modelRequirement": "折叠架、双侧握位、大门",
+      "prefabKey": "GB_E06_Large",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E07",
+      "zh": "动物控制杆",
+      "en": "Animal control pole",
+      "platformId": "E07",
+      "kind": "Equipment",
+      "unlockLevel": 7,
+      "price": 1100,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "保持2秒暂控；转匹配容器后才稳定",
+      "modelRequirement": "杆与端部夹环、约束锚点",
+      "prefabKey": "GB_E07",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E08",
+      "zh": "捕捉网",
+      "en": "Capture net",
+      "platformId": "E08",
+      "kind": "Equipment",
+      "unlockLevel": 4,
+      "price": 850,
+      "emptySlots": 1,
+      "occupiedSlots": 1,
+      "maxUsesPerPackage": 0,
+      "rule": "小型短控/低速窗口；唯一网袋占用后禁二次捕捉",
+      "modelRequirement": "网圈、网袋空满两态",
+      "prefabKey": "GB_E08",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E09",
+      "zh": "封闭药饵站",
+      "en": "Enclosed bait station",
+      "platformId": "E09",
+      "kind": "Equipment",
+      "unlockLevel": 4,
+      "price": 800,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "仅M01–M04；P08；合法点进入后12秒留可查残骸",
+      "modelRequirement": "封闭盒、双入口、锁盖",
+      "prefabKey": "GB_E09",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E10",
+      "zh": "吹箭器",
+      "en": "Dart blower",
+      "platformId": "E10",
+      "kind": "Equipment",
+      "unlockLevel": 5,
+      "price": 1250,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "内装3；P03；小型短控5秒，非稳定捕获",
+      "modelRequirement": "管口、持握点、短控反馈",
+      "prefabKey": "GB_E10",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E11",
+      "zh": "长矛",
+      "en": "Spear",
+      "platformId": "E11",
+      "kind": "Equipment",
+      "unlockLevel": 3,
+      "price": 650,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "近刺/对地戳刺/远投；投出原实例；大型推拒不致死",
+      "modelRequirement": "矛杆、矛尖、近刺与投掷",
+      "prefabKey": "GB_E11",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E12",
+      "zh": "复合弓",
+      "en": "Compound bow",
+      "platformId": "E12",
+      "kind": "Equipment",
+      "unlockLevel": 9,
+      "price": 4200,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "P04；备箭1；拉弓0.8秒；小中型100游戏伤害",
+      "modelRequirement": "弓臂、弦、搭箭与拉满",
+      "prefabKey": "GB_E12",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E13",
+      "zh": "灭鼠气枪",
+      "en": "Pest air rifle",
+      "platformId": "E13",
+      "kind": "Equipment",
+      "unlockLevel": 6,
+      "price": 3100,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "内装5；P05；M01–M08支持，其他提示不适配",
+      "modelRequirement": "枪体、瞄线、装填与后坐",
+      "prefabKey": "GB_E13",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E14",
+      "zh": "常驻手电筒",
+      "en": "Built-in flashlight",
+      "platformId": "E14",
+      "kind": "BuiltIn",
+      "unlockLevel": 1,
+      "price": 0,
+      "emptySlots": 0,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "F切换；手工具不遮光；场景挡光",
+      "modelRequirement": "灯筒轮廓、有效锥形光束",
+      "prefabKey": "GB_E14",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": false,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E15",
+      "zh": "观察镜",
+      "en": "Observation scope",
+      "platformId": "E15",
+      "kind": "Equipment",
+      "unlockLevel": 3,
+      "price": 1300,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "基础光学2倍；夜视/热像升级；不透墙",
+      "modelRequirement": "镜体、切视野、遮挡正确",
+      "prefabKey": "GB_E15",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E16",
+      "zh": "侦查无人机",
+      "en": "Recon drone",
+      "platformId": "E16",
+      "kind": "Equipment",
+      "unlockLevel": 18,
+      "price": 12000,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "120秒电量；半径60m；本体留原地，不暂停；无攻击",
+      "modelRequirement": "四旋翼、地面停放/飞行/返航",
+      "prefabKey": "GB_E16",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E17",
+      "zh": "部署式监测相机",
+      "en": "Monitoring camera",
+      "platformId": "E17",
+      "kind": "Equipment",
+      "unlockLevel": 8,
+      "price": 2200,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "视距18m/70度；300秒能量；只记实际过视野",
+      "modelRequirement": "支架、镜头、触发指示灯",
+      "prefabKey": "GB_E17",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "E18",
+      "zh": "民用猎用步枪",
+      "en": "Hunting rifle",
+      "platformId": "E18",
+      "kind": "Equipment",
+      "unlockLevel": 16,
+      "price": 7800,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 0,
+      "rule": "内装1；P06；指定大目标100游戏伤害；强噪声",
+      "modelRequirement": "枪体、镜具、抛壳/装填/后坐",
+      "prefabKey": "GB_E18",
+      "permanent": true,
+      "stackAfterSkill": false,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P01",
+      "zh": "消杀补给",
+      "en": "Spray refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 1,
+      "price": 25,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 20,
+      "rule": "一包20秒喷剂等量；部分补充保留",
+      "modelRequirement": "瓶体与剩余刻度",
+      "prefabKey": "GB_P01",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P02",
+      "zh": "修缮材料",
+      "en": "Repair refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 1,
+      "price": 30,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 100,
+      "rule": "一包100耐久点",
+      "modelRequirement": "盒体、板片与网片示意",
+      "prefabKey": "GB_P02",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P03",
+      "zh": "游戏吹箭",
+      "en": "Game darts",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 5,
+      "price": 20,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 10,
+      "rule": "一包10次；不是现实麻醉配方",
+      "modelRequirement": "独立箭匣轮廓",
+      "prefabKey": "GB_P03",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P04",
+      "zh": "作业箭矢",
+      "en": "Work arrows",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 9,
+      "price": 35,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 10,
+      "rule": "一包10支；原箭ID可回收，不复制",
+      "modelRequirement": "箭袋与单箭",
+      "prefabKey": "GB_P04",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P05",
+      "zh": "气枪弹补给",
+      "en": "Air rifle refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 6,
+      "price": 20,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 30,
+      "rule": "一包30发游戏弹",
+      "modelRequirement": "小弹盒",
+      "prefabKey": "GB_P05",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P06",
+      "zh": "猎用弹药补给",
+      "en": "Hunting rifle refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 16,
+      "price": 60,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 10,
+      "rule": "一包10发游戏弹",
+      "modelRequirement": "大弹盒，与P05明显区分",
+      "prefabKey": "GB_P06",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P07",
+      "zh": "普通诱饵",
+      "en": "General bait",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 1,
+      "price": 20,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 5,
+      "rule": "一包5次；手持右键加已部署笼/夹",
+      "modelRequirement": "封口袋、装置饵块",
+      "prefabKey": "GB_P07",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P08",
+      "zh": "封装药饵",
+      "en": "Sealed bait refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 4,
+      "price": 30,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 5,
+      "rule": "一包5次；仅装E09",
+      "modelRequirement": "锁扣补给盒，不散撒",
+      "prefabKey": "GB_P08",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P09",
+      "zh": "尸体袋",
+      "en": "Carcass bag",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 1,
+      "price": 3,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 1,
+      "rule": "单袋一次；中型袋装1格，大型双手；小鼠不用袋",
+      "modelRequirement": "空折叠/中满/大满三态",
+      "prefabKey": "GB_P09",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    },
+    {
+      "id": "P10",
+      "zh": "清洁补充剂",
+      "en": "Cleaning refill",
+      "platformId": null,
+      "kind": "Consumable",
+      "unlockLevel": 1,
+      "price": 20,
+      "emptySlots": 1,
+      "occupiedSlots": null,
+      "maxUsesPerPackage": 100,
+      "rule": "一包100耐久点",
+      "modelRequirement": "带刷具标记瓶",
+      "prefabKey": "GB_P10",
+      "permanent": false,
+      "stackAfterSkill": true,
+      "fieldDeliverable": true,
+      "source": "engineering-initial-unless-starter"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "Q01",
+      "zh": "回家前的清理",
+      "en": "Before They Return",
+      "mapId": "L01",
+      "type": "Clear",
+      "unlockAfter": null,
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M01",
+          "count": 5,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I01",
+        "I05"
+      ],
+      "requiredWorks": [
+        "I01源灭杀清洁",
+        "I05源灭杀排水",
+        "漏水修复"
+      ],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Furniture",
+      "assetInitialUnits": 500,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 150,
+      "rewardXP": 120,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.BasicShortfall"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q01.S1",
+          "kind": "AllMainSealsBeforeNight",
+          "threshold": 2,
+          "zh": "入夜前封好两处主要缝隙",
+          "evaluation": "NightStarted"
+        },
+        {
+          "id": "Q01.S2",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "家具总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q01.S3",
+          "kind": "OrdinaryAliveLoaded",
+          "threshold": 1,
+          "zh": "活捉装车1只普通目标",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 100,
+        "weightEach": 1
+      },
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q02",
+      "zh": "储物柜保卫",
+      "en": "Cupboard Watch",
+      "mapId": "L01",
+      "type": "Protect",
+      "unlockAfter": "Q01",
+      "mainPolicy": "AssetRatioAtProtectionEnd",
+      "targetBudget": [
+        {
+          "speciesId": "M01",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M01",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 120
+        },
+        {
+          "speciesId": "M02",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 240
+        }
+      ],
+      "guaranteedInsects": [
+        "I02"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": 360,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Food",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": true,
+      "driveBoundary": "Map.DriveOffBoundary",
+      "companionsAllowed": true,
+      "rewardCash": 170,
+      "rewardXP": 140,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.BasicShortfall"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q02.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "食品柜总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q02.S2",
+          "kind": "NoHandDamage",
+          "threshold": 0,
+          "zh": "不用手持直接杀伤工具",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q02.S3",
+          "kind": "InvestigateOrdinaryCorpse",
+          "threshold": 1,
+          "zh": "调查1只普通目标遗体",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q03",
+      "zh": "邻居已经睡了",
+      "en": "Sleeping Neighbors",
+      "mapId": "L01",
+      "type": "Silent",
+      "unlockAfter": "Q01",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M01",
+          "count": 4,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I06"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 180,
+      "rewardXP": 160,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.BasicShortfall"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "UsedForbiddenE18",
+        "OperatedForbiddenE16"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q03.S1",
+          "kind": "FleeEventsMax",
+          "threshold": 2,
+          "zh": "高警戒逃跑≤2次",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q03.S2",
+          "kind": "RequiredControlDeadline",
+          "threshold": 300,
+          "zh": "夜间300秒内控制主目标",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q03.S3",
+          "kind": "NoTool",
+          "threshold": 0,
+          "zh": "不用药饵站",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [
+        "E18",
+        "E16.Operate"
+      ],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q04",
+      "zh": "开仓检查",
+      "en": "Granary Inspection",
+      "mapId": "L02",
+      "type": "Nest",
+      "unlockAfter": "Q01",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M01",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M02",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M03",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I07",
+        "I08",
+        "I11"
+      ],
+      "requiredWorks": [
+        "受害木件处理",
+        "受害织物隔离清洁",
+        "污染粮批隔离"
+      ],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": "Grain",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 220,
+      "rewardXP": 180,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.SmallControl"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q04.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "健康粮总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q04.S2",
+          "kind": "InvestigateMainHighTraces",
+          "threshold": 2,
+          "zh": "调查两处主要高处痕迹",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q04.S3",
+          "kind": "TrapControls",
+          "threshold": 2,
+          "zh": "陷阱处理≥2只",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q05",
+      "zh": "梁上的脚步",
+      "en": "Footsteps in the Rafters",
+      "mapId": "L02",
+      "type": "Clear",
+      "unlockAfter": "Q04",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M03",
+          "count": 4,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M02",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I09"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Grain",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 240,
+      "rewardXP": 200,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.HighRouteControl"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q05.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "粮批总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q05.S2",
+          "kind": "LocateHighTarget",
+          "threshold": 1,
+          "zh": "用观察镜或Q定位1只高处目标",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q05.S3",
+          "kind": "NoDirectShot",
+          "threshold": 0,
+          "zh": "不用直接射击",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q06",
+      "zh": "取样活体",
+      "en": "Live Samples",
+      "mapId": "L02",
+      "type": "Live",
+      "unlockAfter": "Q04",
+      "mainPolicy": "StableLiveDeliveryPlusRequiredControl",
+      "targetBudget": [
+        {
+          "speciesId": "M02",
+          "count": 2,
+          "role": "Delivery",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M01",
+          "count": 2,
+          "role": "Optional",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "S01",
+          "count": 1,
+          "role": "NonTarget",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 270,
+      "rewardXP": 220,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.SmallLiveSamples"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "RequiredDeliveryAnimalDead"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q06.S1",
+          "kind": "DeliveryHealthMin",
+          "threshold": 0.8,
+          "zh": "两只交付样本生命均≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q06.S2",
+          "kind": "NoNonTargetSnakeDeath",
+          "threshold": 0,
+          "zh": "未杀死非目标蛇",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q06.S3",
+          "kind": "RequiredCaptureDeadline",
+          "threshold": 480,
+          "zh": "夜间480秒内完成指定捕获",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q07",
+      "zh": "蛋窝的动静",
+      "en": "Trouble at the Nests",
+      "mapId": "L03",
+      "type": "Protect",
+      "unlockAfter": "Q04",
+      "mainPolicy": "AssetRatioAtProtectionEnd",
+      "targetBudget": [
+        {
+          "speciesId": "M09",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M10",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 120
+        },
+        {
+          "speciesId": "M09",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 240
+        },
+        {
+          "speciesId": "M01",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 360
+        }
+      ],
+      "guaranteedInsects": [
+        "I03",
+        "I10"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": 480,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Eggs",
+      "assetInitialUnits": 50,
+      "acceptDriveOff": true,
+      "driveBoundary": "Map.DriveOffBoundary",
+      "companionsAllowed": true,
+      "rewardCash": 290,
+      "rewardXP": 240,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q07.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "蛋总量保留≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q07.S2",
+          "kind": "RepairMainNetBeforeNight",
+          "threshold": 2,
+          "zh": "入夜前修好两处主要破网",
+          "evaluation": "NightStarted"
+        },
+        {
+          "id": "Q07.S3",
+          "kind": "ThiefAliveLoaded",
+          "threshold": 1,
+          "zh": "活捉装车1只偷食者",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 10,
+        "weightEach": 1
+      },
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q08",
+      "zh": "沟渠来客",
+      "en": "Visitor from the Ditch",
+      "mapId": "L03",
+      "type": "Live",
+      "unlockAfter": "Q07",
+      "mainPolicy": "StableLiveDeliveryPlusRequiredControl",
+      "targetBudget": [
+        {
+          "speciesId": "M10",
+          "count": 1,
+          "role": "Delivery",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M09",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": "Chicken",
+      "assetInitialUnits": 1200,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 310,
+      "rewardXP": 260,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "RequiredDeliveryAnimalDead"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q08.S1",
+          "kind": "NamedTargetLossMax",
+          "threshold": 0.1,
+          "zh": "指定水貂最终造成永久财产损失≤10%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q08.S2",
+          "kind": "AnimalHealthRatio",
+          "threshold": 0.8,
+          "zh": "鸡群健康总量≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q08.S3",
+          "kind": "OnlyControlMethods",
+          "threshold": [
+            "E06",
+            "E04"
+          ],
+          "zh": "仅笼与修缮完成控制",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 12,
+        "unitsEach": 100,
+        "weightEach": 1
+      },
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q09",
+      "zh": "狐狸的撤离线",
+      "en": "The Fox Retreat",
+      "mapId": "L03",
+      "type": "Clear",
+      "unlockAfter": "Q07",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M14",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M01",
+          "count": 3,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 330,
+      "rewardXP": 280,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive",
+        "LP.Camera"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q09.S1",
+          "kind": "RecoverIntactStolenItem",
+          "threshold": 1,
+          "zh": "追回1件完整被偷物",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q09.S2",
+          "kind": "NoTool",
+          "threshold": 0,
+          "zh": "不用猎用步枪",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q09.S3",
+          "kind": "CameraPassEvents",
+          "threshold": 2,
+          "zh": "监测记录2次不同经过事件",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q10",
+      "zh": "雨后的棚舍",
+      "en": "After the Rain",
+      "mapId": "L04",
+      "type": "Nest",
+      "unlockAfter": "Q07",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M02",
+          "count": 5,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I04",
+        "I03"
+      ],
+      "requiredWorks": [
+        "两处主要蝇源灭杀与垫料清洁",
+        "一处漏水维修"
+      ],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": "Pig",
+      "assetInitialUnits": 800,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 360,
+      "rewardXP": 300,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.BasicShortfall"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q10.S1",
+          "kind": "MainSourcesBeforeNight",
+          "threshold": 2,
+          "zh": "入夜前处理两处主要源点",
+          "evaluation": "NightStarted"
+        },
+        {
+          "id": "Q10.S2",
+          "kind": "AnimalHealthRatio",
+          "threshold": 0.8,
+          "zh": "猪群健康总量≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q10.S3",
+          "kind": "NoConsumable",
+          "threshold": 0,
+          "zh": "不用封装药饵",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 8,
+        "unitsEach": 100,
+        "weightEach": 1
+      },
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q11",
+      "zh": "饲料间翻找声",
+      "en": "Feed Room Rummaging",
+      "mapId": "L04",
+      "type": "Protect",
+      "unlockAfter": "Q10",
+      "mainPolicy": "AssetRatioAtProtectionEnd",
+      "targetBudget": [
+        {
+          "speciesId": "M11",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M12",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 120
+        },
+        {
+          "speciesId": "M11",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 240
+        },
+        {
+          "speciesId": "M02",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 360
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": 480,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Feed",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": true,
+      "driveBoundary": "Map.DriveOffBoundary",
+      "companionsAllowed": true,
+      "rewardCash": 380,
+      "rewardXP": 320,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q11.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "饲料总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q11.S2",
+          "kind": "ContainSpecies",
+          "threshold": 1,
+          "zh": "稳定活捉1只浣熊",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q11.S3",
+          "kind": "NoToolSet",
+          "threshold": 0,
+          "zh": "不用无人机或枪械",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q12",
+      "zh": "别惹那个尾巴",
+      "en": "Mind That Tail",
+      "mapId": "L04",
+      "type": "Timed",
+      "unlockAfter": "Q10",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M13",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M12",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": 540,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 400,
+      "rewardXP": 340,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "DeadlineExpiredIncomplete"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q12.S1",
+          "kind": "SkunkSprayEventsMax",
+          "threshold": 1,
+          "zh": "臭鼬干扰≤1次",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q12.S2",
+          "kind": "AllRequiredLive",
+          "threshold": 3,
+          "zh": "三只任务动物均稳定活捉",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q12.S3",
+          "kind": "RecoverMainDevices",
+          "threshold": 1,
+          "zh": "回收全部自有已部署主要装置",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q13",
+      "zh": "树干上的圆孔",
+      "en": "Holes in the Trunks",
+      "mapId": "L05",
+      "type": "Nest",
+      "unlockAfter": "Q10",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M03",
+          "count": 4,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I12",
+        "I14"
+      ],
+      "requiredWorks": [
+        "两棵受害树的I12树段处理"
+      ],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": "Trees",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 430,
+      "rewardXP": 360,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.HighRouteControl"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q13.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "健康树总状态≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q13.S2",
+          "kind": "InvestigateSpeciesSet",
+          "threshold": [
+            "I12",
+            "I14"
+          ],
+          "zh": "调查I12与I14两类虫害",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q13.S3",
+          "kind": "RequiredControlDeadline",
+          "threshold": 420,
+          "zh": "夜间420秒内控制4只高处鼠",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q14",
+      "zh": "谁在咬树根",
+      "en": "Who Is Eating the Roots",
+      "mapId": "L05",
+      "type": "Clear",
+      "unlockAfter": "Q13",
+      "mainPolicy": "RequiredWorkAndKillOrStableCapture",
+      "targetBudget": [
+        {
+          "speciesId": "M05",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M04",
+          "count": 3,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "C05",
+          "count": 1,
+          "role": "Rare",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [
+        "调查确认本局活动洞系"
+      ],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 470,
+      "rewardXP": 380,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.BurrowControl"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q14.S1",
+          "kind": "NoSpeciesDeath",
+          "threshold": 0,
+          "zh": "未杀死稀有鼹鼠",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q14.S2",
+          "kind": "RepairMainPipes",
+          "threshold": 2,
+          "zh": "恢复两处主要灌溉支管",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q14.S3",
+          "kind": "NoDirectShot",
+          "threshold": 0,
+          "zh": "不用直接射击",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "KeepLoadedAnimalsWithoutContractReward"
+    },
+    {
+      "id": "Q15",
+      "zh": "收果前一夜",
+      "en": "Before the Harvest",
+      "mapId": "L05",
+      "type": "Protect",
+      "unlockAfter": "Q13",
+      "mainPolicy": "AssetRatioAtProtectionEnd",
+      "targetBudget": [
+        {
+          "speciesId": "M04",
+          "count": 3,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M05",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 180
+        },
+        {
+          "speciesId": "M06",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 360
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": 540,
+      "protectionMinimum": 0.6,
+      "assetGroup": "Harvest",
+      "assetInitialUnits": 1000,
+      "acceptDriveOff": true,
+      "driveBoundary": "Map.DriveOffBoundary",
+      "companionsAllowed": true,
+      "rewardCash": 500,
+      "rewardXP": 400,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.MediumLive"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "AssetBelow60Percent"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q15.S1",
+          "kind": "AssetRatio",
+          "threshold": 0.8,
+          "zh": "采收区总完好度≥80%",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q15.S2",
+          "kind": "ContainOrdinaryCount",
+          "threshold": 2,
+          "zh": "稳定活捉2只普通目标",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q15.S3",
+          "kind": "NoToolSet",
+          "threshold": 0,
+          "zh": "不用药饵或猎用步枪",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": {
+        "groups": 5,
+        "unitsEach": 200,
+        "weightEach": 1
+      },
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q16",
+      "zh": "田野猎踪",
+      "en": "Field Tracking",
+      "mapId": "L06",
+      "type": "Hunt",
+      "unlockAfter": "Q13",
+      "mainPolicy": "KillRequired",
+      "targetBudget": [
+        {
+          "speciesId": "M14",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M07",
+          "count": 1,
+          "role": "Optional",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I13",
+        "I05"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 530,
+      "rewardXP": 440,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.HuntMedium",
+        "LP.CorpseBag"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "RequiredTargetLeavesFailureBoundary"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q16.S1",
+          "kind": "MainTracesBeforeNight",
+          "threshold": 2,
+          "zh": "入夜前调查2处不同目标痕迹",
+          "evaluation": "NightStarted"
+        },
+        {
+          "id": "Q16.S2",
+          "kind": "NoNonTargetDeath",
+          "threshold": 0,
+          "zh": "非目标动物无死亡",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q16.S3",
+          "kind": "InvestigatedRequiredCorpseLoaded",
+          "threshold": 1,
+          "zh": "调查并装车1只任务目标遗体",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q17",
+      "zh": "麦地野猪",
+      "en": "Boars in the Wheat",
+      "mapId": "L06",
+      "type": "Hunt",
+      "unlockAfter": "Q16",
+      "mainPolicy": "KillRequired",
+      "targetBudget": [
+        {
+          "speciesId": "M16",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M08",
+          "count": 1,
+          "role": "Optional",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "S02",
+          "count": 1,
+          "role": "Optional",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [
+        "I10"
+      ],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 590,
+      "rewardXP": 480,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.HuntLarge",
+        "LP.Camera",
+        "LP.CorpseBag"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "RequiredTargetLeavesFailureBoundary"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q17.S1",
+          "kind": "CameraRequiredPass",
+          "threshold": 1,
+          "zh": "相机记录1次目标经过",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q17.S2",
+          "kind": "BoarHitsMax",
+          "threshold": 2,
+          "zh": "野猪冲撞命中≤2次",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q17.S3",
+          "kind": "InvestigateRequiredCorpses",
+          "threshold": 2,
+          "zh": "调查2只任务目标遗体",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    },
+    {
+      "id": "Q18",
+      "zh": "旷野最后一班",
+      "en": "Last Shift in the Fields",
+      "mapId": "L06",
+      "type": "Hunt",
+      "unlockAfter": "Q16",
+      "mainPolicy": "KillRequired",
+      "targetBudget": [
+        {
+          "speciesId": "M17",
+          "count": 1,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        },
+        {
+          "speciesId": "M15",
+          "count": 2,
+          "role": "Required",
+          "phase": "Night",
+          "activationSeconds": 0
+        }
+      ],
+      "guaranteedInsects": [],
+      "requiredWorks": [],
+      "clockStart": "NightStarted",
+      "durationSeconds": null,
+      "protectionMinimum": null,
+      "assetGroup": null,
+      "assetInitialUnits": null,
+      "acceptDriveOff": false,
+      "driveBoundary": null,
+      "companionsAllowed": true,
+      "rewardCash": 650,
+      "rewardXP": 560,
+      "firstStarCash": 30,
+      "firstStarXP": 40,
+      "loans": [
+        "LP.HuntLarge",
+        "LP.CorpseBag"
+      ],
+      "failures": [
+        "PlayerDown",
+        "ExplicitAbort",
+        "RequiredTargetLeavesFailureBoundary"
+      ],
+      "starPredicates": [
+        {
+          "id": "Q18.S1",
+          "kind": "IdentifyBeforeFirstAttack",
+          "threshold": 1,
+          "zh": "每只指定目标先有效识别再攻击",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q18.S2",
+          "kind": "DangerHitsMax",
+          "threshold": 2,
+          "zh": "危险动物命中≤2次",
+          "evaluation": "ContinuousEventAndDeparture"
+        },
+        {
+          "id": "Q18.S3",
+          "kind": "RecoverDevicesAndCorpseLoaded",
+          "threshold": 1,
+          "zh": "回收主要设备并装车1只任务遗体",
+          "evaluation": "ContinuousEventAndDeparture"
+        }
+      ],
+      "forbiddenMainTools": [],
+      "boundaryPolicy": "RequiredContainedInMapUnlessPublishedFailureBoundary",
+      "budgetRefill": 0,
+      "assetBaseline": null,
+      "abortPolicy": "FailureDiscardRunAnimalCargo"
+    }
+  ],
+  "rareEvents": [
+    {
+      "id": "R.C01",
+      "speciesId": "C01",
+      "hostContractId": "Q01",
+      "mapId": "L01",
+      "unlockAfter": null,
+      "phase": "Night",
+      "firstClueGuarantee": false,
+      "probability": 0.45,
+      "delaySecondsRange": [
+        180,
+        300
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C02",
+      "speciesId": "C02",
+      "hostContractId": "Q08",
+      "mapId": "L03",
+      "unlockAfter": "Q08",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C03",
+      "speciesId": "C03",
+      "hostContractId": "Q09",
+      "mapId": "L03",
+      "unlockAfter": "Q09",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C04",
+      "speciesId": "C04",
+      "hostContractId": "Q13",
+      "mapId": "L05",
+      "unlockAfter": "Q13",
+      "phase": "Day",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        0,
+        0
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C05",
+      "speciesId": "C05",
+      "hostContractId": "Q14",
+      "mapId": "L05",
+      "unlockAfter": null,
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": true,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C06",
+      "speciesId": "C06",
+      "hostContractId": "Q16",
+      "mapId": "L06",
+      "unlockAfter": "Q16",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C07",
+      "speciesId": "C07",
+      "hostContractId": "Q18",
+      "mapId": "L06",
+      "unlockAfter": "Q18",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C08",
+      "speciesId": "C08",
+      "hostContractId": "Q02",
+      "mapId": "L01",
+      "unlockAfter": "Q02",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C09",
+      "speciesId": "C09",
+      "hostContractId": "Q13",
+      "mapId": "L05",
+      "unlockAfter": "Q13",
+      "phase": "Day",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        0,
+        0
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C10",
+      "speciesId": "C10",
+      "hostContractId": "Q16",
+      "mapId": "L06",
+      "unlockAfter": "Q16",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C11",
+      "speciesId": "C11",
+      "hostContractId": "Q17",
+      "mapId": "L06",
+      "unlockAfter": "Q17",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    },
+    {
+      "id": "R.C12",
+      "speciesId": "C12",
+      "hostContractId": "Q18",
+      "mapId": "L06",
+      "unlockAfter": "Q18",
+      "phase": "Night",
+      "firstClueGuarantee": true,
+      "probability": 1,
+      "delaySecondsRange": [
+        60,
+        120
+      ],
+      "maximumPerRun": 1,
+      "consumeGuaranteeAt": "FirstStableCapture",
+      "retryUntilCaptured": true,
+      "persistDecision": true,
+      "postGuaranteeRotationRuns": 3,
+      "alwaysInQ14": false,
+      "outdoorOnly": true,
+      "reuseExistingBudgetPlan": true,
+      "existingPlanPolicy": "When a species Rare plan already exists for this event, bind that plan; never create a second creature."
+    }
+  ],
+  "companions": [
+    {
+      "id": "H01",
+      "zh": "作业猫",
+      "en": "Work cat",
+      "price": 1800,
+      "unlockLevel": 4,
+      "maximumOwned": 2,
+      "radiusM": 12,
+      "chaseSeconds": 8,
+      "restSeconds": 4,
+      "pounceWindupSeconds": 0.4,
+      "targetSpecies": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05"
+      ],
+      "modes": [
+        "LiveCapture",
+        "Kill"
+      ],
+      "invulnerable": true
+    },
+    {
+      "id": "H02",
+      "zh": "作业犬",
+      "en": "Work dog",
+      "price": 3100,
+      "unlockLevel": 7,
+      "maximumOwned": 2,
+      "radiusM": 12,
+      "barkRadiusM": 8,
+      "barkWindupSeconds": 0.4,
+      "barkCooldownSeconds": 6,
+      "targetPolicy": "contract-effective-targets-excluding-rare-nontarget-contained-cat-claimed",
+      "invulnerable": true
+    }
+  ],
+  "skills": [
+    {
+      "id": "Shoot.Steady",
+      "branch": "射击",
+      "zh": "稳住准星",
+      "effectKey": "standingSwayMultiplier",
+      "rankFinalValues": [
+        0.7,
+        0.4
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Shoot.Breath",
+      "branch": "射击",
+      "zh": "呼吸训练",
+      "effectKey": "breathSeconds",
+      "rankFinalValues": [
+        12,
+        16
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Shoot.Recover",
+      "branch": "射击",
+      "zh": "快速复位",
+      "effectKey": "shotRecoveryMultiplier",
+      "rankFinalValues": [
+        0.7,
+        0.4
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Shoot.Aim",
+      "branch": "射击",
+      "zh": "迅速入镜",
+      "effectKey": "aimTransitionMultiplier",
+      "rankFinalValues": [
+        0.65,
+        0.35
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Shoot.Reload",
+      "branch": "射击",
+      "zh": "轻快装填",
+      "effectKey": "reloadMultiplier",
+      "rankFinalValues": [
+        0.6,
+        0.3
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Deploy.LightHands",
+      "branch": "布防",
+      "zh": "轻手作业",
+      "effectKey": "deployResetMultiplier",
+      "rankFinalValues": [
+        0.5,
+        0.25
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Deploy.BaitRange",
+      "branch": "布防",
+      "zh": "诱饵经验",
+      "effectKey": "baitRadiusMultiplier",
+      "rankFinalValues": [
+        1.35,
+        1.7
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Deploy.BaitEconomy",
+      "branch": "布防",
+      "zh": "节用诱饵",
+      "effectKey": "usesPerBaitPackage",
+      "rankFinalValues": [
+        8,
+        12
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Deploy.Capacity",
+      "branch": "布防",
+      "zh": "分区管理",
+      "effectKey": "deploymentTotal",
+      "rankFinalValues": [
+        12,
+        16
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Deploy.Repair",
+      "branch": "布防",
+      "zh": "熟练修缮",
+      "effectKey": "repairCleanMultiplier",
+      "rankFinalValues": [
+        0.6,
+        0.3
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Steady",
+      "branch": "捕捉",
+      "zh": "稳手控制",
+      "effectKey": "netRodDurationMultiplier",
+      "rankFinalValues": [
+        0.65,
+        0.35
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Calm",
+      "branch": "捕捉",
+      "zh": "安抚处置",
+      "effectKey": "shortControlWindowMultiplier",
+      "rankFinalValues": [
+        1.5,
+        2
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Recover",
+      "branch": "捕捉",
+      "zh": "快速回收",
+      "effectKey": "pickupTransferBagMultiplier",
+      "rankFinalValues": [
+        0.6,
+        0.3
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Arrows",
+      "branch": "捕捉",
+      "zh": "完整回收",
+      "effectKey": "arrowRecoveryProbability",
+      "rankFinalValues": [
+        0.75,
+        1
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Container",
+      "branch": "捕捉",
+      "zh": "收容专家",
+      "effectKey": "cageTransferMultiplier",
+      "rankFinalValues": [
+        0.7,
+        0.4
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Capture.Team",
+      "branch": "捕捉",
+      "zh": "伙伴协作",
+      "effectKey": "partnerRestCooldownMultiplier",
+      "rankFinalValues": [
+        0.7,
+        0.4
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        4,
+        12
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Body.Stamina",
+      "branch": "体能",
+      "zh": "耐力训练",
+      "effectKey": "staminaMultiplier",
+      "rankFinalValues": [
+        1.5,
+        2
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Body.Regen",
+      "branch": "体能",
+      "zh": "恢复训练",
+      "effectKey": "staminaRegenMultiplier",
+      "rankFinalValues": [
+        1.5,
+        2
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Body.Carry",
+      "branch": "体能",
+      "zh": "搬运步伐",
+      "effectKey": "largeCarrySpeed",
+      "rankFinalValues": [
+        2.25,
+        3
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Body.Slots",
+      "branch": "体能",
+      "zh": "随身收纳",
+      "effectKey": "extraSlots",
+      "rankFinalValues": [
+        2,
+        4
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Body.Stack",
+      "branch": "体能",
+      "zh": "分类收纳",
+      "effectKey": "smallStackLimit",
+      "rankFinalValues": [
+        3,
+        6
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Scout.Range",
+      "branch": "侦查",
+      "zh": "感知扩域",
+      "effectKey": "qRadius",
+      "rankFinalValues": [
+        15,
+        20
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 0,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Scout.Fast",
+      "branch": "侦查",
+      "zh": "快速感知",
+      "effectKey": "qCooldown",
+      "rankFinalValues": [
+        7,
+        5
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Scout.Mark",
+      "branch": "侦查",
+      "zh": "余迹留存",
+      "effectKey": "qMarkSeconds",
+      "rankFinalValues": [
+        6,
+        8
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Scout.Battery",
+      "branch": "侦查",
+      "zh": "设备管理",
+      "effectKey": "deviceBatteryMultiplier",
+      "rankFinalValues": [
+        1.5,
+        2
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    },
+    {
+      "id": "Scout.Identify",
+      "branch": "侦查",
+      "zh": "目标研判",
+      "effectKey": "identifyInvestigateMultiplier",
+      "rankFinalValues": [
+        0.6,
+        0.3
+      ],
+      "rankPointCosts": [
+        1,
+        1
+      ],
+      "levelGates": [
+        1,
+        1
+      ],
+      "rank2RequiresRank1": true,
+      "branchPointsRequired": 2,
+      "freeResetAtCompany": true
+    }
+  ],
+  "services": [
+    {
+      "id": "V.Ordinary6",
+      "zh": "普通舱6位",
+      "unlockLevel": 6,
+      "price": 1500,
+      "target": "ordinaryLiveSlots",
+      "finalValue": 6,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "V.Ordinary8",
+      "zh": "普通舱8位",
+      "unlockLevel": 10,
+      "price": 2200,
+      "target": "ordinaryLiveSlots",
+      "finalValue": 8,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "V.Ordinary12",
+      "zh": "普通舱12位",
+      "unlockLevel": 16,
+      "price": 3000,
+      "target": "ordinaryLiveSlots",
+      "finalValue": 12,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "V.Large2",
+      "zh": "大型舱2位",
+      "unlockLevel": 16,
+      "price": 4500,
+      "target": "largeLiveSlots",
+      "finalValue": 2,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "V.Large3",
+      "zh": "大型舱3位",
+      "unlockLevel": 20,
+      "price": 6500,
+      "target": "largeLiveSlots",
+      "finalValue": 3,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E01.Nozzle",
+      "zh": "定向喷头",
+      "unlockLevel": 4,
+      "price": 300,
+      "target": "E01.effectiveSpraySeconds",
+      "finalValue": 1.5,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E13.Stable",
+      "zh": "气枪稳定配置",
+      "unlockLevel": 9,
+      "price": 1500,
+      "target": "E13.swayMultiplier",
+      "finalValue": 0.7,
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E15.NV",
+      "zh": "观察镜数字夜视",
+      "unlockLevel": 10,
+      "price": 1800,
+      "target": "E15.mode",
+      "finalValue": "NightVision",
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E15.Thermal",
+      "zh": "观察镜热像",
+      "unlockLevel": 16,
+      "price": 3500,
+      "target": "E15.mode",
+      "finalValue": "Thermal",
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E16.NV",
+      "zh": "无人机夜视相机",
+      "unlockLevel": 18,
+      "price": 4000,
+      "target": "E16.mode",
+      "finalValue": "NightVision",
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E16.Thermal",
+      "zh": "无人机热像相机",
+      "unlockLevel": 22,
+      "price": 6000,
+      "target": "E16.mode",
+      "finalValue": "Thermal",
+      "newInventoryItem": false,
+      "companyOnly": true
+    },
+    {
+      "id": "U.E18.Scope",
+      "zh": "步枪稳定镜具",
+      "unlockLevel": 18,
+      "price": 3800,
+      "target": "E18.opticalZoom",
+      "finalValue": 4,
+      "newInventoryItem": false,
+      "companyOnly": true
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "totalXP": 0,
+      "skillPointsGranted": 0,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 2,
+      "totalXP": 120,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 3,
+      "totalXP": 280,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 4,
+      "totalXP": 480,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 5,
+      "totalXP": 720,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 1
+    },
+    {
+      "level": 6,
+      "totalXP": 1000,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 7,
+      "totalXP": 1320,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 8,
+      "totalXP": 1680,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 9,
+      "totalXP": 2080,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 10,
+      "totalXP": 2520,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 11,
+      "totalXP": 3000,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 12,
+      "totalXP": 3520,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 13,
+      "totalXP": 4080,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 14,
+      "totalXP": 4680,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 15,
+      "totalXP": 5330,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 1
+    },
+    {
+      "level": 16,
+      "totalXP": 6030,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 17,
+      "totalXP": 6780,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 18,
+      "totalXP": 7580,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 19,
+      "totalXP": 8430,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 20,
+      "totalXP": 9330,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 21,
+      "totalXP": 10280,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 22,
+      "totalXP": 11280,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 23,
+      "totalXP": 12330,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 24,
+      "totalXP": 13430,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    },
+    {
+      "level": 25,
+      "totalXP": 14630,
+      "skillPointsGranted": 2,
+      "extraSlotsGranted": 0
+    }
+  ],
+  "maps": [
+    {
+      "id": "Company",
+      "name": "河湾公司基地",
+      "bounds": [
+        -36,
+        36,
+        -26,
+        44
+      ],
+      "truck": [
+        15,
+        -10
+      ],
+      "building": [
+        -9,
+        -3,
+        9,
+        9
+      ],
+      "reference": "area.jpg / task.jpg",
+      "regions": [
+        [
+          "办公室",
+          -9,
+          -3,
+          9,
+          9
+        ],
+        [
+          "捐赠口",
+          -29,
+          26,
+          -14,
+          38
+        ],
+        [
+          "采购柜台",
+          -8,
+          26,
+          8,
+          38
+        ],
+        [
+          "收购口",
+          14,
+          26,
+          30,
+          38
+        ]
+      ],
+      "points": [
+        [
+          "BOARD",
+          0,
+          7,
+          "委托黑板"
+        ],
+        [
+          "SPAWN",
+          0,
+          0,
+          "新档出生"
+        ],
+        [
+          "REAR",
+          0,
+          11,
+          "后门"
+        ],
+        [
+          "DONATE",
+          -21,
+          28,
+          "捐赠笼"
+        ],
+        [
+          "SHOP",
+          0,
+          28,
+          "取货台"
+        ],
+        [
+          "SELL",
+          22,
+          28,
+          "收购笼"
+        ],
+        [
+          "CORPSE",
+          26,
+          25,
+          "尸体托盘"
+        ],
+        [
+          "STORE",
+          -6,
+          3,
+          "公司仓库"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            -21,
+            28
+          ]
+        ],
+        [
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            23
+          ],
+          [
+            22,
+            28
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -8
+          ],
+          [
+            15,
+            -10
+          ]
+        ]
+      ],
+      "candidateCounts": {},
+      "geometry": "办公室18×12m、净高3m；正门朝南，后门朝北。后方主小道3m宽，两支路2.5m宽。三终端区域各约15×12m，大笼最大3×2×2m、开口至少2m；操作前沿3m。卡车停前方右侧，车尾4×4m净区。",
+      "play": "黑板分地图/委托/详情三块；退出保留选择，独立确认出发。左后方捐赠明亮整洁、中间器械铺、右后方收购暗旧，无NPC。仓库/留货区与车厢所有权分开。"
+    },
+    {
+      "id": "L01",
+      "name": "榆树街住宅",
+      "bounds": [
+        -34,
+        34,
+        -28,
+        36
+      ],
+      "truck": [
+        -16.5,
+        -3
+      ],
+      "building": [
+        -8,
+        -2,
+        8,
+        10
+      ],
+      "reference": "L01.jpg",
+      "regions": [
+        [
+          "两层住宅",
+          -8,
+          -2,
+          8,
+          10
+        ],
+        [
+          "菜地与积水",
+          10,
+          4,
+          23,
+          18
+        ],
+        [
+          "后院",
+          -11,
+          12,
+          12,
+          25
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          0,
+          -3,
+          "前门"
+        ],
+        [
+          "STAIR",
+          -2,
+          7,
+          "楼梯"
+        ],
+        [
+          "W.I01",
+          5,
+          2,
+          "蠊源候选区"
+        ],
+        [
+          "W.WATER",
+          16,
+          12,
+          "积水候选区"
+        ],
+        [
+          "W.LEAK",
+          6,
+          8,
+          "水管修复"
+        ],
+        [
+          "F.EAST",
+          8,
+          4,
+          "东侧鼠洞"
+        ],
+        [
+          "F.WEST",
+          -8,
+          5,
+          "西侧鼠洞"
+        ],
+        [
+          "R.C01",
+          20,
+          24,
+          "刺猬室外"
+        ],
+        [
+          "R.C08",
+          20,
+          5,
+          "姬鼠垄沟"
+        ],
+        [
+          "ASSET",
+          2,
+          4,
+          "柜/家具组"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            -16.5,
+            -3
+          ],
+          [
+            -13,
+            -9
+          ],
+          [
+            0,
+            -5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -2,
+            7
+          ]
+        ],
+        [
+          [
+            0,
+            -5
+          ],
+          [
+            11,
+            -4
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            0,
+            24
+          ],
+          [
+            -12,
+            12
+          ],
+          [
+            -12,
+            -4
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "InsectSource": 6,
+        "WaterSource": 5,
+        "Leak": 4,
+        "Seal": 8,
+        "Rare": 6
+      },
+      "geometry": "室内16×12m，两层净高2.8m、层高3.25m；一层厨房/客厅/杂物间，二层卧室/储物/过厅。楼梯净宽1.4m、折返平台1.8×1.8m，台阶按控制器可走碰撞搭斜面；不可用瞬移上楼。卡车与西墙净距7m，车尾4m净区，屋两侧/后方绕行≥2m。",
+      "play": "保留图片后住宅、左卡车、右菜地/积水与麦田围合；院落较图放宽。Q01固定5鼠按一楼1、二楼2、室外2分配，Q02柜/食物资产另组，Q03四鼠低噪处理。家具五件各100，Q01基准500；食品柜独立1000单位。"
+    },
+    {
+      "id": "L02",
+      "name": "风车旧粮仓",
+      "bounds": [
+        -50,
+        50,
+        -30,
+        68
+      ],
+      "truck": [
+        -31,
+        -15
+      ],
+      "building": [
+        -18,
+        0,
+        18,
+        34
+      ],
+      "reference": "L02.jpg",
+      "regions": [
+        [
+          "粮仓主厅",
+          -18,
+          0,
+          18,
+          34
+        ],
+        [
+          "织物/档案室",
+          18,
+          6,
+          28,
+          20
+        ],
+        [
+          "外院土丘",
+          -31,
+          38,
+          -15,
+          53
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          0,
+          0,
+          "大门"
+        ],
+        [
+          "GRAIN.A",
+          -10,
+          12,
+          "健康粮A"
+        ],
+        [
+          "GRAIN.B",
+          10,
+          23,
+          "健康粮B"
+        ],
+        [
+          "W.WOOD",
+          -16,
+          27,
+          "受害木件"
+        ],
+        [
+          "W.CLOTH",
+          23,
+          11,
+          "受害织物"
+        ],
+        [
+          "W.GRAIN",
+          -8,
+          24,
+          "污染粮批"
+        ],
+        [
+          "TRACE.A",
+          -12,
+          7,
+          "高处痕迹1"
+        ],
+        [
+          "TRACE.B",
+          12,
+          28,
+          "高处痕迹2"
+        ],
+        [
+          "R.C05",
+          -24,
+          47,
+          "外院鼹鼠"
+        ],
+        [
+          "S01",
+          20,
+          29,
+          "蛇低位来客"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            -31,
+            -15
+          ],
+          [
+            -24,
+            -5
+          ],
+          [
+            0,
+            -3
+          ],
+          [
+            0,
+            30
+          ]
+        ],
+        [
+          [
+            0,
+            6
+          ],
+          [
+            -13,
+            6
+          ],
+          [
+            -13,
+            28
+          ],
+          [
+            13,
+            28
+          ],
+          [
+            13,
+            6
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "Wood": 6,
+        "Cloth": 4,
+        "GrainBatch": 5,
+        "Leak": 4,
+        "Seal": 8,
+        "HighTrace": 6
+      },
+      "geometry": "主仓36×34m，檐口5m、屋脊8m；风车塔地标约14m，只作外观，不新增登塔玩法。粮堆高1.2–2.2m、通道1.8m以上、中央搬运线3m。屋梁高度3.5–5m，至少两条高处环路、3处落地转接、两处无遮挡调查/捕获窗口。",
+      "play": "图中木构大门/屋梁/粮袋是玩法主体；高处鼠不能仅在屏幕顶端游走。Q04木件/织物/粮批三种不同作业，Q05高处清除，Q06指定活体交付。健康粮五批各200单位；不能向粮堆射穿。"
+    },
+    {
+      "id": "L03",
+      "name": "柳沟散养鸡场",
+      "bounds": [
+        -52,
+        52,
+        -30,
+        70
+      ],
+      "truck": [
+        34,
+        57
+      ],
+      "building": [
+        -34,
+        -3,
+        -18,
+        14
+      ],
+      "reference": "L03.jpg",
+      "regions": [
+        [
+          "散养区",
+          -34,
+          0,
+          30,
+          43
+        ],
+        [
+          "鸡舍与蛋窝",
+          -34,
+          2,
+          -18,
+          27
+        ],
+        [
+          "东侧沟渠",
+          33,
+          -4,
+          40,
+          46
+        ],
+        [
+          "稀有外围",
+          -42,
+          48,
+          -12,
+          62
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          29,
+          44,
+          "主门"
+        ],
+        [
+          "NEST.A",
+          -26,
+          9,
+          "蛋窝1/2"
+        ],
+        [
+          "NEST.B",
+          -26,
+          23,
+          "蛋窝3"
+        ],
+        [
+          "NEST.C",
+          11,
+          28,
+          "蛋窝4/5"
+        ],
+        [
+          "F.NET.A",
+          -34,
+          17,
+          "主要破网A"
+        ],
+        [
+          "F.NET.B",
+          15,
+          43,
+          "主要破网B"
+        ],
+        [
+          "DITCH",
+          36,
+          20,
+          "水貂沟口"
+        ],
+        [
+          "RECOVER",
+          23,
+          36,
+          "追回完整蛋"
+        ],
+        [
+          "CAM.A",
+          -24,
+          35,
+          "监测线A"
+        ],
+        [
+          "CAM.B",
+          26,
+          12,
+          "监测线B"
+        ],
+        [
+          "R.C02",
+          -32,
+          55,
+          "爪痕蚁路"
+        ],
+        [
+          "R.C03",
+          -15,
+          55,
+          "豹猫狭道"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            34,
+            57
+          ],
+          [
+            29,
+            44
+          ],
+          [
+            18,
+            36
+          ],
+          [
+            11,
+            28
+          ],
+          [
+            -26,
+            23
+          ],
+          [
+            -26,
+            9
+          ]
+        ],
+        [
+          [
+            36,
+            20
+          ],
+          [
+            30,
+            20
+          ],
+          [
+            23,
+            36
+          ],
+          [
+            8,
+            40
+          ],
+          [
+            -24,
+            35
+          ],
+          [
+            -34,
+            17
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "FlySource": 6,
+        "WaterSource": 5,
+        "NetRepair": 8,
+        "Leak": 4,
+        "TheftExit": 6
+      },
+      "geometry": "围合散养区64×43m，五个蛋窝分散在3组鸡舍，鸡舍净门1.2m、主路2.5m。沟渠宽2m、深0.35m、两座2m桥；动物沟口与玩家桥分开，不加游泳。停车点到最远蛋窝约80m实路径。围栏可修但不自由搭建。",
+      "play": "图中散养、独立鸡舍、蛋窝、树下遮挡保留，家鸡12只简化AI。蛋初始50、每窝10；保护主30、星40。Q08指定水貂与黄鼬，Q09两条监测线和完整可追回物保底。稀有穿山甲/豹猫分局出现，非目标不进蛋损害预算。"
+    },
+    {
+      "id": "L04",
+      "name": "铁棚养猪场",
+      "bounds": [
+        -52,
+        52,
+        -30,
+        72
+      ],
+      "truck": [
+        -33,
+        -14
+      ],
+      "building": [
+        -18,
+        -2,
+        18,
+        46
+      ],
+      "reference": "L04.jpg",
+      "regions": [
+        [
+          "长条猪棚",
+          -18,
+          -2,
+          18,
+          46
+        ],
+        [
+          "饲料间",
+          19,
+          8,
+          33,
+          25
+        ],
+        [
+          "背棚污水",
+          -24,
+          48,
+          24,
+          61
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          0,
+          -3,
+          "中央通道"
+        ],
+        [
+          "FEED",
+          25,
+          17,
+          "饲料组"
+        ],
+        [
+          "W.BEDDING",
+          -11,
+          23,
+          "湿垫料"
+        ],
+        [
+          "W.LEAK",
+          11,
+          38,
+          "漏水槽"
+        ],
+        [
+          "W.DRAIN",
+          0,
+          54,
+          "排水/蝇源"
+        ],
+        [
+          "M11",
+          30,
+          29,
+          "浣熊翻找"
+        ],
+        [
+          "M12",
+          -18,
+          49,
+          "负鼠棚底"
+        ],
+        [
+          "M13",
+          24,
+          52,
+          "臭鼬预警"
+        ],
+        [
+          "R.C01",
+          -34,
+          50,
+          "外围刺猬"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            -33,
+            -14
+          ],
+          [
+            -22,
+            -7
+          ],
+          [
+            0,
+            -6
+          ],
+          [
+            0,
+            44
+          ],
+          [
+            0,
+            54
+          ]
+        ],
+        [
+          [
+            0,
+            14
+          ],
+          [
+            25,
+            14
+          ],
+          [
+            25,
+            32
+          ],
+          [
+            0,
+            44
+          ],
+          [
+            -22,
+            44
+          ],
+          [
+            -22,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "FlySource": 8,
+        "Bedding": 6,
+        "Leak": 5,
+        "FenceRepair": 6,
+        "Trash": 5
+      },
+      "geometry": "主棚36×48m、檐高4m；中央3m通道，两侧各4栏，栏位约12×9m。每栏门1.8m，操作点避家猪固定身体；饲料间14×17m，两个出口。机器声音分区不能变为全图消音器；外侧有2.5m绕行。",
+      "play": "保留概念图长条铁棚、双排猪栏、中央过道、侧饲料筒。家猪8只，猪健康每只100；饲料五堆各200。Q10虫源/漏水、Q11饲料保护、Q12臭鼬/负鼠限时控制；臭鼬必须先抬尾与声音预告。"
+    },
+    {
+      "id": "L05",
+      "name": "石坡果园",
+      "bounds": [
+        -65,
+        65,
+        -30,
+        95
+      ],
+      "truck": [
+        39,
+        -13
+      ],
+      "building": [
+        16,
+        0,
+        31,
+        12
+      ],
+      "reference": "L05.jpg",
+      "regions": [
+        [
+          "下层果树",
+          -42,
+          3,
+          8,
+          26
+        ],
+        [
+          "中层果树",
+          -42,
+          34,
+          8,
+          57
+        ],
+        [
+          "上层果树",
+          -42,
+          65,
+          8,
+          84
+        ],
+        [
+          "工具棚/果箱",
+          16,
+          0,
+          31,
+          12
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          26,
+          0,
+          "入园"
+        ],
+        [
+          "W.TREE.A",
+          -21,
+          17,
+          "受害树A"
+        ],
+        [
+          "W.TREE.B",
+          -8,
+          47,
+          "受害树B"
+        ],
+        [
+          "PIPE.A",
+          11,
+          23,
+          "支管1"
+        ],
+        [
+          "PIPE.B",
+          10,
+          57,
+          "支管2"
+        ],
+        [
+          "BURROW",
+          -30,
+          50,
+          "活动洞系"
+        ],
+        [
+          "R.C04",
+          -15,
+          70,
+          "松鼠低枝"
+        ],
+        [
+          "R.C09",
+          2,
+          63,
+          "睡鼠矮灌丛"
+        ],
+        [
+          "R.C05",
+          -28,
+          32,
+          "鼹鼠土丘"
+        ],
+        [
+          "FRUIT",
+          21,
+          6,
+          "采收果箱"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            39,
+            -13
+          ],
+          [
+            26,
+            0
+          ],
+          [
+            13,
+            18
+          ],
+          [
+            13,
+            47
+          ],
+          [
+            13,
+            77
+          ],
+          [
+            -15,
+            77
+          ]
+        ],
+        [
+          [
+            13,
+            18
+          ],
+          [
+            -35,
+            18
+          ],
+          [
+            -35,
+            47
+          ],
+          [
+            13,
+            47
+          ]
+        ],
+        [
+          [
+            13,
+            47
+          ],
+          [
+            -35,
+            47
+          ],
+          [
+            -35,
+            77
+          ],
+          [
+            13,
+            77
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "InfestedTree": 8,
+        "FruitInsect": 6,
+        "PipeRepair": 8,
+        "BurrowExit": 12,
+        "HighTrace": 8
+      },
+      "geometry": "三层台地Y=0/1.8/3.6m，每层约50×23m，树间5–7m，共24棵白模果树。玩家/大货走主坡道，坡≤12度、净宽2.5m；石坎非跳越必经路。灌溉沟宽0.8m、桥2m；树枝活动高1.5–3m且有固定下行点。",
+      "play": "保留图中坡地、石坎、果树排、沟渠/漏管、棚与卡车。Q13两树段与I12/I14样本，Q14洞系和固定稀有鼹鼠，Q15采收保护。健康树/采收五组各200单位，参数显示为组汇总。严禁玩家进入地下或靠爬树拿最后目标。"
+    },
+    {
+      "id": "L06",
+      "name": "北岸开阔农田",
+      "bounds": [
+        -85,
+        85,
+        -35,
+        125
+      ],
+      "truck": [
+        -54,
+        -18
+      ],
+      "building": null,
+      "reference": "L06.jpg",
+      "regions": [
+        [
+          "收割低茬田",
+          -62,
+          -1,
+          2,
+          45
+        ],
+        [
+          "主麦田",
+          10,
+          5,
+          65,
+          80
+        ],
+        [
+          "北侧开阔田",
+          -62,
+          57,
+          4,
+          104
+        ],
+        [
+          "稀有田边",
+          -73,
+          106,
+          67,
+          118
+        ]
+      ],
+      "points": [
+        [
+          "ENTRY",
+          -45,
+          -3,
+          "唯一土石入口"
+        ],
+        [
+          "ROCK.A",
+          -25,
+          20,
+          "脱战石A"
+        ],
+        [
+          "ROCK.B",
+          31,
+          43,
+          "脱战石B"
+        ],
+        [
+          "ROCK.C",
+          -9,
+          78,
+          "脱战石C"
+        ],
+        [
+          "TRACE.A",
+          -39,
+          12,
+          "脚印1"
+        ],
+        [
+          "TRACE.B",
+          13,
+          60,
+          "翻土2"
+        ],
+        [
+          "CAM",
+          18,
+          29,
+          "巡游监测线"
+        ],
+        [
+          "S02",
+          58,
+          13,
+          "响尾蛇风险点"
+        ],
+        [
+          "R.WEST",
+          -60,
+          110,
+          "獾/松貂树丛"
+        ],
+        [
+          "R.EAST",
+          53,
+          110,
+          "狍/雪兔/耳廓狐"
+        ]
+      ],
+      "routes": [
+        [
+          [
+            -54,
+            -18
+          ],
+          [
+            -45,
+            -3
+          ],
+          [
+            -25,
+            20
+          ],
+          [
+            0,
+            33
+          ],
+          [
+            31,
+            43
+          ]
+        ],
+        [
+          [
+            -25,
+            20
+          ],
+          [
+            -35,
+            60
+          ],
+          [
+            -9,
+            78
+          ],
+          [
+            20,
+            80
+          ],
+          [
+            31,
+            43
+          ]
+        ],
+        [
+          [
+            31,
+            43
+          ],
+          [
+            53,
+            77
+          ],
+          [
+            53,
+            110
+          ]
+        ]
+      ],
+      "candidateCounts": {
+        "Track": 10,
+        "BoarTrace": 8,
+        "BermRepair": 4,
+        "InsectSource": 5,
+        "Rare": 10,
+        "SafeRetreat": 8
+      },
+      "geometry": "可玩约170×160m，核心追踪区约120×100m。田埂高0.3–0.8m、浅沟≤0.4m，土石主路3m。射击观察窗20–80m；三处大型石障各约3×2×1.6m并有可绕路径，近侧换装/回收空地12×10m。远田与树线作边界外观，不能把全部160m深区域都设计为反复搬运必经。",
+      "play": "忠实保留开阔麦田/低茬田、入口卡车、少量石障和孤立树。无畜栏、无家畜、防守资产或保护倒计时。Q16狐、Q17猪、Q18狼/郊狼分单固定预算。Q17明示S02；M04–M08有可保证遇见的附加轮换，C06/C07/C10–C12田边活捕。主作业回车沿合法步行45–105m约15–35秒，最远稀有点允许更长并在测试记录。"
+    }
+  ],
+  "loanPackages": {
+    "LP.BasicShortfall": {
+      "items": [
+        "E01",
+        "E03",
+        "E04",
+        "E05",
+        "E06.Small"
+      ],
+      "supplyPolicy": "required-work-and-target-shortfall-only"
+    },
+    "LP.SmallControl": {
+      "items": [
+        "E05",
+        "E06.Small"
+      ],
+      "supplies": {
+        "P07": 2
+      }
+    },
+    "LP.HighRouteControl": {
+      "items": [
+        "E06.Small",
+        "E05"
+      ],
+      "supplies": {
+        "P07": 2
+      }
+    },
+    "LP.SmallLiveSamples": {
+      "items": [
+        "E06.Small"
+      ],
+      "supplies": {
+        "P07": 2
+      },
+      "optionalCodex": [
+        "E07",
+        "E06.Small.SnakeLiner"
+      ]
+    },
+    "LP.MediumLive": {
+      "items": [
+        "E06.Medium",
+        "E06.Small"
+      ],
+      "supplies": {
+        "P07": 2
+      }
+    },
+    "LP.BurrowControl": {
+      "items": [
+        "E06.Small",
+        "E05"
+      ],
+      "supplies": {
+        "P07": 2
+      }
+    },
+    "LP.Camera": {
+      "items": [
+        "E17"
+      ],
+      "initialEnergySeconds": 300
+    },
+    "LP.HuntMedium": {
+      "selectOne": [
+        "E12",
+        "E18"
+      ],
+      "matchingSupplyPackages": 1
+    },
+    "LP.HuntLarge": {
+      "items": [
+        "E18"
+      ],
+      "supplies": {
+        "P06": 1
+      }
+    },
+    "LP.CorpseBag": {
+      "items": [],
+      "supplies": {
+        "P09": 3
+      }
+    }
+  },
+  "defaultInput": {
+    "emptyHands": "0",
+    "slots1to9": "1-9",
+    "slot10": "scroll-or-player-rebind",
+    "cycle": "wheel",
+    "interact": "E",
+    "scanOrHoldInvestigate": "Q",
+    "drop": "G",
+    "reload": "R",
+    "flashlight": "F",
+    "companionWheel": "T",
+    "crouch": "LeftCtrl",
+    "sprintOrAimBreath": "LeftShift",
+    "contract": "Tab",
+    "inventory": "I",
+    "pause": "Esc"
+  },
+  "contentCoverageGuarantees": {
+    "Q01Replay": {
+      "speciesId": "M02",
+      "count": 1,
+      "fromCompletedOrStartedRunIndex": 2,
+      "role": "Optional"
+    },
+    "L06Rotation": {
+      "speciesIds": [
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "selection": "player-may-select-one-unlocked-optional-clue",
+      "count": 1,
+      "noMainCount": true
+    },
+    "CodexLoan": {
+      "S01": [
+        "E07",
+        "E06.Small.SnakeLiner"
+      ],
+      "C07": [
+        "E06.Large",
+        "P07"
+      ]
+    }
+  },
+  "reviewStatus": {
+    "documentValidation": "see-校验/文档校验报告.md",
+    "unityCompilation": "not-run-this-document-turn",
+    "gameplayTests": "not-run-this-document-turn",
+    "p0UserAcceptanceDate": "2026-11-14"
+  },
+  "specialBehaviorParameters": {
+    "M12.Feign": {
+      "triggerDistanceM": 3,
+      "windupSeconds": 0.5,
+      "durationSeconds": [
+        4,
+        8
+      ],
+      "countsAsControl": false,
+      "breakOnCaptureOrHit": true
+    },
+    "M13.Spray": {
+      "warningSeconds": 1,
+      "rangeM": 3,
+      "coneDegrees": 70,
+      "visualAudioInterferenceSeconds": 3,
+      "cooldownSeconds": 8,
+      "damage": 0,
+      "oneEventPerSpray": true
+    },
+    "M16.Charge": {
+      "triggerDistanceM": 7,
+      "windupSeconds": 1,
+      "maxTravelM": 6,
+      "recoverySeconds": 2,
+      "playerDamage": 25
+    },
+    "M17.Chase": {
+      "triggerDistanceM": 8,
+      "windupSeconds": 0.8,
+      "maxChaseSeconds": 6,
+      "leashM": 18,
+      "biteRangeM": 1.5,
+      "biteCooldownSeconds": 2,
+      "playerDamage": 20
+    },
+    "S02.Strike": {
+      "warningSeconds": 0.8,
+      "rangeM": 1.5,
+      "recoverySeconds": 2,
+      "playerDamage": 10
+    },
+    "Burrow.Transit": {
+      "entryExitSeconds": 0.4,
+      "undergroundTransitSeconds": [
+        3,
+        6
+      ],
+      "maximumHiddenSecondsBeforePeek": 12,
+      "originalEntityId": true
+    },
+    "Thief.Take": {
+      "takeSeconds": 1.2,
+      "quantityPerAction": 1,
+      "intactRecoverySeconds": 10,
+      "consumesAtBoundary": true
+    },
+    "Cat.Pounce": {
+      "windupSeconds": 0.4,
+      "distanceM": 1.2,
+      "requiresClearSegment": true,
+      "holdNeedsMatchingContainer": true
+    },
+    "Curl": {
+      "enterSeconds": 0.5,
+      "holdSeconds": [
+        3,
+        6
+      ],
+      "unrollSeconds": 0.7,
+      "needsSafeArea": true,
+      "countsAsControl": false
+    }
+  }
+}
